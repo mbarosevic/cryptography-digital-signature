@@ -16,5 +16,46 @@ namespace CryptographyDigitalSignature
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            HidePanels();
+            pnlEncrypt.Show();
+        }
+
+        private void btnEncryptUc_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            pnlEncrypt.Show();
+        }
+
+        private void btnDecryptUc_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            pnlDecrypt.Show();
+        }
+
+        private void btnHashUc_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            pnlHash.Show();
+        }
+
+        private void btnDigitalSignature_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            pnlDigitalSignature.Show();
+        }
+
+        private void HidePanels()
+        {
+            foreach(Control c in this.Controls)
+            {
+                if(c is Panel)
+                {
+                    c.Visible = false;
+                }
+            }
+        }
     }
 }

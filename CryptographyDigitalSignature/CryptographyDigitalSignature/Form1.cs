@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MetroSet_UI.Forms;
 namespace CryptographyDigitalSignature
 {
-    public partial class Form1 : Form
+    public partial class MainForm : MetroSetForm
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }

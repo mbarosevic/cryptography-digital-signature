@@ -1,0 +1,2 @@
+# cryptography-digital-signature
+Windows Forms application that provides symmetric and asymmetric encryption. Besides encryption, it provides text decryption depending on the encryption algorithm (AES or RSA). For the sake of creating digital signatures, text hash value is calculated with SHA-256 hashing algorithm, and encrypted with RSA asymmetric algorithm. The last option provides validation the authenticity and integrity of a message by simply providing digital signature and message.

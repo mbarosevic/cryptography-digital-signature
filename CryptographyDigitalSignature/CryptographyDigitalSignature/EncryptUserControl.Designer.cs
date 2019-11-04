@@ -36,6 +36,7 @@
             this.tbxEncryptedText = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.tbxPlainText = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.btnSaveSecretKey = new MetroSet_UI.Controls.MetroSetButton();
             this.SuspendLayout();
             // 
             // cbxEncryptionAlgorithm
@@ -54,7 +55,7 @@
             this.cbxEncryptionAlgorithm.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxEncryptionAlgorithm.FormattingEnabled = true;
             this.cbxEncryptionAlgorithm.ItemHeight = 20;
-            this.cbxEncryptionAlgorithm.Location = new System.Drawing.Point(268, 42);
+            this.cbxEncryptionAlgorithm.Location = new System.Drawing.Point(250, 43);
             this.cbxEncryptionAlgorithm.Name = "cbxEncryptionAlgorithm";
             this.cbxEncryptionAlgorithm.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cbxEncryptionAlgorithm.SelectedItemForeColor = System.Drawing.Color.White;
@@ -74,7 +75,7 @@
             this.metroSetLabel3.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel3.StyleManager = null;
             this.metroSetLabel3.TabIndex = 14;
-            this.metroSetLabel3.Text = "Odaberite algoritam kriptiranja";
+            this.metroSetLabel3.Text = "Choose encryption algorithm";
             this.metroSetLabel3.ThemeAuthor = "Narwin";
             this.metroSetLabel3.ThemeName = "MetroLite";
             // 
@@ -87,7 +88,7 @@
             this.btnOpenFileDialog.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.HoverColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.HoverTextColor = System.Drawing.Color.White;
-            this.btnOpenFileDialog.Location = new System.Drawing.Point(43, 251);
+            this.btnOpenFileDialog.Location = new System.Drawing.Point(43, 185);
             this.btnOpenFileDialog.Name = "btnOpenFileDialog";
             this.btnOpenFileDialog.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.NormalColor = System.Drawing.Color.Maroon;
@@ -99,20 +100,21 @@
             this.btnOpenFileDialog.Style = MetroSet_UI.Design.Style.Custom;
             this.btnOpenFileDialog.StyleManager = null;
             this.btnOpenFileDialog.TabIndex = 13;
-            this.btnOpenFileDialog.Text = "Odaberi datoteku";
+            this.btnOpenFileDialog.Text = "Choose File";
             this.btnOpenFileDialog.ThemeAuthor = "Narwin";
             this.btnOpenFileDialog.ThemeName = "MetroLite";
+            this.btnOpenFileDialog.Click += new System.EventHandler(this.btnOpenFileDialog_Click);
             // 
             // metroSetLabel2
             // 
             this.metroSetLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel2.Location = new System.Drawing.Point(43, 291);
+            this.metroSetLabel2.Location = new System.Drawing.Point(43, 243);
             this.metroSetLabel2.Name = "metroSetLabel2";
             this.metroSetLabel2.Size = new System.Drawing.Size(397, 18);
             this.metroSetLabel2.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel2.StyleManager = null;
             this.metroSetLabel2.TabIndex = 12;
-            this.metroSetLabel2.Text = "Kriptiran tekst";
+            this.metroSetLabel2.Text = "Encrypted Text";
             this.metroSetLabel2.ThemeAuthor = "Narwin";
             this.metroSetLabel2.ThemeName = "MetroLite";
             // 
@@ -125,7 +127,7 @@
             this.btnEncrypt.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnEncrypt.HoverColor = System.Drawing.Color.Maroon;
             this.btnEncrypt.HoverTextColor = System.Drawing.Color.White;
-            this.btnEncrypt.Location = new System.Drawing.Point(217, 251);
+            this.btnEncrypt.Location = new System.Drawing.Point(216, 185);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnEncrypt.NormalColor = System.Drawing.Color.Maroon;
@@ -137,7 +139,7 @@
             this.btnEncrypt.Style = MetroSet_UI.Design.Style.Custom;
             this.btnEncrypt.StyleManager = null;
             this.btnEncrypt.TabIndex = 11;
-            this.btnEncrypt.Text = "Kriptiraj";
+            this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.ThemeAuthor = "Narwin";
             this.btnEncrypt.ThemeName = "MetroLite";
             this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
@@ -155,12 +157,12 @@
             this.tbxEncryptedText.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.tbxEncryptedText.Image = null;
             this.tbxEncryptedText.Lines = null;
-            this.tbxEncryptedText.Location = new System.Drawing.Point(43, 311);
+            this.tbxEncryptedText.Location = new System.Drawing.Point(43, 274);
             this.tbxEncryptedText.MaxLength = 32767;
             this.tbxEncryptedText.Multiline = true;
             this.tbxEncryptedText.Name = "tbxEncryptedText";
             this.tbxEncryptedText.ReadOnly = true;
-            this.tbxEncryptedText.Size = new System.Drawing.Size(636, 170);
+            this.tbxEncryptedText.Size = new System.Drawing.Size(636, 98);
             this.tbxEncryptedText.Style = MetroSet_UI.Design.Style.Light;
             this.tbxEncryptedText.StyleManager = null;
             this.tbxEncryptedText.TabIndex = 10;
@@ -179,7 +181,7 @@
             this.metroSetLabel1.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel1.StyleManager = null;
             this.metroSetLabel1.TabIndex = 9;
-            this.metroSetLabel1.Text = "Unesite tekst ili odaberite datoteku";
+            this.metroSetLabel1.Text = "Choose a text file or enter text";
             this.metroSetLabel1.ThemeAuthor = "Narwin";
             this.metroSetLabel1.ThemeName = "MetroLite";
             // 
@@ -201,7 +203,7 @@
             this.tbxPlainText.Multiline = false;
             this.tbxPlainText.Name = "tbxPlainText";
             this.tbxPlainText.ReadOnly = false;
-            this.tbxPlainText.Size = new System.Drawing.Size(636, 170);
+            this.tbxPlainText.Size = new System.Drawing.Size(636, 91);
             this.tbxPlainText.Style = MetroSet_UI.Design.Style.Light;
             this.tbxPlainText.StyleManager = null;
             this.tbxPlainText.TabIndex = 8;
@@ -211,11 +213,37 @@
             this.tbxPlainText.UseSystemPasswordChar = false;
             this.tbxPlainText.WatermarkText = "";
             // 
+            // btnSaveSecretKey
+            // 
+            this.btnSaveSecretKey.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSaveSecretKey.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSaveSecretKey.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnSaveSecretKey.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveSecretKey.HoverBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveSecretKey.HoverColor = System.Drawing.Color.Maroon;
+            this.btnSaveSecretKey.HoverTextColor = System.Drawing.Color.White;
+            this.btnSaveSecretKey.Location = new System.Drawing.Point(43, 405);
+            this.btnSaveSecretKey.Name = "btnSaveSecretKey";
+            this.btnSaveSecretKey.NormalBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveSecretKey.NormalColor = System.Drawing.Color.Maroon;
+            this.btnSaveSecretKey.NormalTextColor = System.Drawing.Color.White;
+            this.btnSaveSecretKey.PressBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveSecretKey.PressColor = System.Drawing.Color.Maroon;
+            this.btnSaveSecretKey.PressTextColor = System.Drawing.Color.White;
+            this.btnSaveSecretKey.Size = new System.Drawing.Size(155, 31);
+            this.btnSaveSecretKey.Style = MetroSet_UI.Design.Style.Custom;
+            this.btnSaveSecretKey.StyleManager = null;
+            this.btnSaveSecretKey.TabIndex = 16;
+            this.btnSaveSecretKey.Text = "Save Key";
+            this.btnSaveSecretKey.ThemeAuthor = "Narwin";
+            this.btnSaveSecretKey.ThemeName = "MetroLite";
+            // 
             // EncryptUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnSaveSecretKey);
             this.Controls.Add(this.cbxEncryptionAlgorithm);
             this.Controls.Add(this.metroSetLabel3);
             this.Controls.Add(this.btnOpenFileDialog);
@@ -240,5 +268,6 @@
         private MetroSet_UI.Controls.MetroSetTextBox tbxEncryptedText;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
         private MetroSet_UI.Controls.MetroSetTextBox tbxPlainText;
+        private MetroSet_UI.Controls.MetroSetButton btnSaveSecretKey;
     }
 }

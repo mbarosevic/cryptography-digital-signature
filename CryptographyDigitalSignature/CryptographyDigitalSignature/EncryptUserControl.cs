@@ -19,8 +19,10 @@ namespace CryptographyDigitalSignature
             cbxEncryptionAlgorithm.Items.Add("AES");
             cbxEncryptionAlgorithm.SelectedIndex = 0;
         }
+        MainForm mainForm;
         Aes aes = new Aes();
 
+        string plainText = string.Empty;
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             if(tbxPlainText.Text == "")
@@ -36,6 +38,15 @@ namespace CryptographyDigitalSignature
         public void Encrypt(string plainText)
         {
             tbxEncryptedText.Text = aes.Encrypt(plainText);
+        }
+
+        private void btnOpenFileDialog_Click(object sender, EventArgs e)
+        {
+            tbxPlainText.Text = "";
+            tbxEncryptedText.Text = "";
+            mainForm = new MainForm();
+            plainText = mainForm.OpenFileDialog();
+            tbxPlainText.Text = plainText;
         }
     }
 }

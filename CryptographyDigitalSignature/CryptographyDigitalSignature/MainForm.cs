@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,30 @@ namespace CryptographyDigitalSignature
                     c.Visible = false;
                 }
             }
+        }
+
+        public string OpenFileDialog()
+        {
+            string fileContent = string.Empty;
+            string path = string.Empty;
+
+            using (OpenFileDialog openFile = new OpenFileDialog())
+            {
+                openFile.InitialDirectory = @"C:\";
+                openFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFile.FilterIndex = 2;
+                openFile.RestoreDirectory = true;
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    path = openFile.FileName;
+                    var fileStream = openFile.OpenFile();
+                    using (StreamReader sr = new StreamReader(fileStream))
+                    {
+                        fileContent = sr.ReadToEnd();
+                    }
+                }
+            }
+            return fileContent;
         }
     }
 }

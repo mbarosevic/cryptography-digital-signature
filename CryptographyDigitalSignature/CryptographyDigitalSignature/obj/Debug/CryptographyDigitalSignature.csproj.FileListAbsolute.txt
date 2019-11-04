@@ -9,3 +9,4 @@ C:\Users\Matija Barosevic\Documents\cryptography-digital-signature\CryptographyD
 C:\Users\Matija Barosevic\Documents\cryptography-digital-signature\CryptographyDigitalSignature\CryptographyDigitalSignature\obj\Debug\CryptographyDigitalSignature.csproj.CopyComplete
 C:\Users\Matija Barosevic\Documents\cryptography-digital-signature\CryptographyDigitalSignature\CryptographyDigitalSignature\obj\Debug\CryptographyDigitalSignature.exe
 C:\Users\Matija Barosevic\Documents\cryptography-digital-signature\CryptographyDigitalSignature\CryptographyDigitalSignature\obj\Debug\CryptographyDigitalSignature.pdb
+C:\Users\Matija Barosevic\Documents\cryptography-digital-signature\CryptographyDigitalSignature\CryptographyDigitalSignature\obj\Debug\CryptographyDigitalSignature.EncryptUserControl.resources

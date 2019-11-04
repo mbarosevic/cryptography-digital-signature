@@ -27,6 +27,7 @@ namespace CryptographyDigitalSignature
         {
             HidePanels();
             pnlEncrypt.Show();
+            encryptUserControl1.Show();
         }
 
         private void btnDecryptUc_Click(object sender, EventArgs e)

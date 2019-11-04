@@ -36,6 +36,7 @@
             this.btnHashUc = new MetroSet_UI.Controls.MetroSetButton();
             this.btnDecryptUc = new MetroSet_UI.Controls.MetroSetButton();
             this.btnEncryptUc = new MetroSet_UI.Controls.MetroSetButton();
+            this.encryptUserControl1 = new CryptographyDigitalSignature.EncryptUserControl();
             this.SuspendLayout();
             // 
             // pnlEncrypt
@@ -198,12 +199,21 @@
             this.btnEncryptUc.ThemeName = "MetroLite";
             this.btnEncryptUc.Click += new System.EventHandler(this.btnEncryptUc_Click);
             // 
+            // encryptUserControl1
+            // 
+            this.encryptUserControl1.BackColor = System.Drawing.Color.White;
+            this.encryptUserControl1.Location = new System.Drawing.Point(32, 120);
+            this.encryptUserControl1.Name = "encryptUserControl1";
+            this.encryptUserControl1.Size = new System.Drawing.Size(728, 488);
+            this.encryptUserControl1.TabIndex = 26;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(775, 612);
+            this.Controls.Add(this.encryptUserControl1);
             this.Controls.Add(this.pnlEncrypt);
             this.Controls.Add(this.pnlHash);
             this.Controls.Add(this.pnlDecrypt);
@@ -235,6 +245,7 @@
         private MetroSet_UI.Controls.MetroSetButton btnHashUc;
         private MetroSet_UI.Controls.MetroSetButton btnDecryptUc;
         private MetroSet_UI.Controls.MetroSetButton btnEncryptUc;
+        private EncryptUserControl encryptUserControl1;
     }
 }
 

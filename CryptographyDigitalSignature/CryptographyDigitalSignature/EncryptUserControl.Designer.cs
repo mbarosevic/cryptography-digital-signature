@@ -140,6 +140,7 @@
             this.btnEncrypt.Text = "Kriptiraj";
             this.btnEncrypt.ThemeAuthor = "Narwin";
             this.btnEncrypt.ThemeName = "MetroLite";
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // tbxEncryptedText
             // 

@@ -83,5 +83,19 @@ namespace CryptographyDigitalSignature
             }
             return fileContent;
         }
+
+        public void SaveFileDialog(string key, string iv)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = saveFileDialog.FileName;
+                using(StreamWriter swSaveKey = File.CreateText(fileName))
+                {
+                    swSaveKey.WriteLine(key + " " + iv);
+                }
+            }
+        }
     }
 }

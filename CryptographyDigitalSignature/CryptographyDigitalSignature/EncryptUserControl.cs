@@ -48,5 +48,11 @@ namespace CryptographyDigitalSignature
             plainText = mainForm.OpenFileDialog();
             tbxPlainText.Text = plainText;
         }
+
+        private void btnSaveSecretKey_Click(object sender, EventArgs e)
+        {
+            mainForm = new MainForm();
+            mainForm.SaveFileDialog(aes.key);
+        }
     }
 }

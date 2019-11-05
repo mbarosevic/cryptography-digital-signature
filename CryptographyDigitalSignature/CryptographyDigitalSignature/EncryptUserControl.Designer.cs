@@ -237,6 +237,7 @@
             this.btnSaveSecretKey.Text = "Save Key";
             this.btnSaveSecretKey.ThemeAuthor = "Narwin";
             this.btnSaveSecretKey.ThemeName = "MetroLite";
+            this.btnSaveSecretKey.Click += new System.EventHandler(this.btnSaveSecretKey_Click);
             // 
             // EncryptUserControl
             // 

@@ -32,10 +32,10 @@
             this.pnlHash = new MetroSet_UI.Controls.MetroSetPanel();
             this.pnlDecrypt = new MetroSet_UI.Controls.MetroSetPanel();
             this.pnlDigitalSignature = new MetroSet_UI.Controls.MetroSetPanel();
-            this.btnDigitalSignature = new MetroSet_UI.Controls.MetroSetButton();
-            this.btnHashUc = new MetroSet_UI.Controls.MetroSetButton();
-            this.btnDecryptUc = new MetroSet_UI.Controls.MetroSetButton();
-            this.btnEncryptUc = new MetroSet_UI.Controls.MetroSetButton();
+            this.btnDigitalSignatureUserControl = new MetroSet_UI.Controls.MetroSetButton();
+            this.btnCalculateHashUserControl = new MetroSet_UI.Controls.MetroSetButton();
+            this.btnDecryptUserControl = new MetroSet_UI.Controls.MetroSetButton();
+            this.btnEncryptUserControl = new MetroSet_UI.Controls.MetroSetButton();
             this.encryptUserControl1 = new CryptographyDigitalSignature.EncryptUserControl();
             this.SuspendLayout();
             // 
@@ -95,109 +95,109 @@
             this.pnlDigitalSignature.ThemeAuthor = "Narwin";
             this.pnlDigitalSignature.ThemeName = "MetroLite";
             // 
-            // btnDigitalSignature
+            // btnDigitalSignatureUserControl
             // 
-            this.btnDigitalSignature.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnDigitalSignature.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnDigitalSignature.DisabledForeColor = System.Drawing.Color.Gray;
-            this.btnDigitalSignature.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDigitalSignature.HoverBorderColor = System.Drawing.Color.White;
-            this.btnDigitalSignature.HoverColor = System.Drawing.Color.White;
-            this.btnDigitalSignature.HoverTextColor = System.Drawing.Color.Maroon;
-            this.btnDigitalSignature.Location = new System.Drawing.Point(552, 87);
-            this.btnDigitalSignature.Name = "btnDigitalSignature";
-            this.btnDigitalSignature.NormalBorderColor = System.Drawing.Color.White;
-            this.btnDigitalSignature.NormalColor = System.Drawing.Color.White;
-            this.btnDigitalSignature.NormalTextColor = System.Drawing.Color.Black;
-            this.btnDigitalSignature.PressBorderColor = System.Drawing.Color.White;
-            this.btnDigitalSignature.PressColor = System.Drawing.Color.White;
-            this.btnDigitalSignature.PressTextColor = System.Drawing.Color.Maroon;
-            this.btnDigitalSignature.Size = new System.Drawing.Size(182, 24);
-            this.btnDigitalSignature.Style = MetroSet_UI.Design.Style.Custom;
-            this.btnDigitalSignature.StyleManager = null;
-            this.btnDigitalSignature.TabIndex = 21;
-            this.btnDigitalSignature.Text = "Provjeri digitalni potpis";
-            this.btnDigitalSignature.ThemeAuthor = "Narwin";
-            this.btnDigitalSignature.ThemeName = "MetroLite";
-            this.btnDigitalSignature.Click += new System.EventHandler(this.btnDigitalSignature_Click);
+            this.btnDigitalSignatureUserControl.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnDigitalSignatureUserControl.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnDigitalSignatureUserControl.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnDigitalSignatureUserControl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDigitalSignatureUserControl.HoverBorderColor = System.Drawing.Color.White;
+            this.btnDigitalSignatureUserControl.HoverColor = System.Drawing.Color.White;
+            this.btnDigitalSignatureUserControl.HoverTextColor = System.Drawing.Color.Maroon;
+            this.btnDigitalSignatureUserControl.Location = new System.Drawing.Point(552, 87);
+            this.btnDigitalSignatureUserControl.Name = "btnDigitalSignatureUserControl";
+            this.btnDigitalSignatureUserControl.NormalBorderColor = System.Drawing.Color.White;
+            this.btnDigitalSignatureUserControl.NormalColor = System.Drawing.Color.White;
+            this.btnDigitalSignatureUserControl.NormalTextColor = System.Drawing.Color.Black;
+            this.btnDigitalSignatureUserControl.PressBorderColor = System.Drawing.Color.White;
+            this.btnDigitalSignatureUserControl.PressColor = System.Drawing.Color.White;
+            this.btnDigitalSignatureUserControl.PressTextColor = System.Drawing.Color.Maroon;
+            this.btnDigitalSignatureUserControl.Size = new System.Drawing.Size(182, 24);
+            this.btnDigitalSignatureUserControl.Style = MetroSet_UI.Design.Style.Custom;
+            this.btnDigitalSignatureUserControl.StyleManager = null;
+            this.btnDigitalSignatureUserControl.TabIndex = 21;
+            this.btnDigitalSignatureUserControl.Text = "Digital signature check";
+            this.btnDigitalSignatureUserControl.ThemeAuthor = "Narwin";
+            this.btnDigitalSignatureUserControl.ThemeName = "MetroLite";
+            this.btnDigitalSignatureUserControl.Click += new System.EventHandler(this.btnDigitalSignature_Click);
             // 
-            // btnHashUc
+            // btnCalculateHashUserControl
             // 
-            this.btnHashUc.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnHashUc.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnHashUc.DisabledForeColor = System.Drawing.Color.Gray;
-            this.btnHashUc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHashUc.HoverBorderColor = System.Drawing.Color.White;
-            this.btnHashUc.HoverColor = System.Drawing.Color.White;
-            this.btnHashUc.HoverTextColor = System.Drawing.Color.Maroon;
-            this.btnHashUc.Location = new System.Drawing.Point(339, 87);
-            this.btnHashUc.Name = "btnHashUc";
-            this.btnHashUc.NormalBorderColor = System.Drawing.Color.White;
-            this.btnHashUc.NormalColor = System.Drawing.Color.White;
-            this.btnHashUc.NormalTextColor = System.Drawing.Color.Black;
-            this.btnHashUc.PressBorderColor = System.Drawing.Color.White;
-            this.btnHashUc.PressColor = System.Drawing.Color.White;
-            this.btnHashUc.PressTextColor = System.Drawing.Color.Maroon;
-            this.btnHashUc.Size = new System.Drawing.Size(182, 24);
-            this.btnHashUc.Style = MetroSet_UI.Design.Style.Custom;
-            this.btnHashUc.StyleManager = null;
-            this.btnHashUc.TabIndex = 20;
-            this.btnHashUc.Text = "Izračunaj sažetak";
-            this.btnHashUc.ThemeAuthor = "Narwin";
-            this.btnHashUc.ThemeName = "MetroLite";
-            this.btnHashUc.Click += new System.EventHandler(this.btnHashUc_Click);
+            this.btnCalculateHashUserControl.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnCalculateHashUserControl.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnCalculateHashUserControl.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnCalculateHashUserControl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculateHashUserControl.HoverBorderColor = System.Drawing.Color.White;
+            this.btnCalculateHashUserControl.HoverColor = System.Drawing.Color.White;
+            this.btnCalculateHashUserControl.HoverTextColor = System.Drawing.Color.Maroon;
+            this.btnCalculateHashUserControl.Location = new System.Drawing.Point(339, 87);
+            this.btnCalculateHashUserControl.Name = "btnCalculateHashUserControl";
+            this.btnCalculateHashUserControl.NormalBorderColor = System.Drawing.Color.White;
+            this.btnCalculateHashUserControl.NormalColor = System.Drawing.Color.White;
+            this.btnCalculateHashUserControl.NormalTextColor = System.Drawing.Color.Black;
+            this.btnCalculateHashUserControl.PressBorderColor = System.Drawing.Color.White;
+            this.btnCalculateHashUserControl.PressColor = System.Drawing.Color.White;
+            this.btnCalculateHashUserControl.PressTextColor = System.Drawing.Color.Maroon;
+            this.btnCalculateHashUserControl.Size = new System.Drawing.Size(182, 24);
+            this.btnCalculateHashUserControl.Style = MetroSet_UI.Design.Style.Custom;
+            this.btnCalculateHashUserControl.StyleManager = null;
+            this.btnCalculateHashUserControl.TabIndex = 20;
+            this.btnCalculateHashUserControl.Text = "Hash";
+            this.btnCalculateHashUserControl.ThemeAuthor = "Narwin";
+            this.btnCalculateHashUserControl.ThemeName = "MetroLite";
+            this.btnCalculateHashUserControl.Click += new System.EventHandler(this.btnHashUc_Click);
             // 
-            // btnDecryptUc
+            // btnDecryptUserControl
             // 
-            this.btnDecryptUc.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnDecryptUc.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnDecryptUc.DisabledForeColor = System.Drawing.Color.Gray;
-            this.btnDecryptUc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecryptUc.HoverBorderColor = System.Drawing.Color.White;
-            this.btnDecryptUc.HoverColor = System.Drawing.Color.White;
-            this.btnDecryptUc.HoverTextColor = System.Drawing.Color.Maroon;
-            this.btnDecryptUc.Location = new System.Drawing.Point(185, 87);
-            this.btnDecryptUc.Name = "btnDecryptUc";
-            this.btnDecryptUc.NormalBorderColor = System.Drawing.Color.White;
-            this.btnDecryptUc.NormalColor = System.Drawing.Color.White;
-            this.btnDecryptUc.NormalTextColor = System.Drawing.Color.Black;
-            this.btnDecryptUc.PressBorderColor = System.Drawing.Color.White;
-            this.btnDecryptUc.PressColor = System.Drawing.Color.White;
-            this.btnDecryptUc.PressTextColor = System.Drawing.Color.Maroon;
-            this.btnDecryptUc.Size = new System.Drawing.Size(148, 24);
-            this.btnDecryptUc.Style = MetroSet_UI.Design.Style.Custom;
-            this.btnDecryptUc.StyleManager = null;
-            this.btnDecryptUc.TabIndex = 19;
-            this.btnDecryptUc.Text = "Dekriptiraj";
-            this.btnDecryptUc.ThemeAuthor = "Narwin";
-            this.btnDecryptUc.ThemeName = "MetroLite";
-            this.btnDecryptUc.Click += new System.EventHandler(this.btnDecryptUc_Click);
+            this.btnDecryptUserControl.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnDecryptUserControl.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnDecryptUserControl.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnDecryptUserControl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecryptUserControl.HoverBorderColor = System.Drawing.Color.White;
+            this.btnDecryptUserControl.HoverColor = System.Drawing.Color.White;
+            this.btnDecryptUserControl.HoverTextColor = System.Drawing.Color.Maroon;
+            this.btnDecryptUserControl.Location = new System.Drawing.Point(185, 87);
+            this.btnDecryptUserControl.Name = "btnDecryptUserControl";
+            this.btnDecryptUserControl.NormalBorderColor = System.Drawing.Color.White;
+            this.btnDecryptUserControl.NormalColor = System.Drawing.Color.White;
+            this.btnDecryptUserControl.NormalTextColor = System.Drawing.Color.Black;
+            this.btnDecryptUserControl.PressBorderColor = System.Drawing.Color.White;
+            this.btnDecryptUserControl.PressColor = System.Drawing.Color.White;
+            this.btnDecryptUserControl.PressTextColor = System.Drawing.Color.Maroon;
+            this.btnDecryptUserControl.Size = new System.Drawing.Size(148, 24);
+            this.btnDecryptUserControl.Style = MetroSet_UI.Design.Style.Custom;
+            this.btnDecryptUserControl.StyleManager = null;
+            this.btnDecryptUserControl.TabIndex = 19;
+            this.btnDecryptUserControl.Text = "Decrypt";
+            this.btnDecryptUserControl.ThemeAuthor = "Narwin";
+            this.btnDecryptUserControl.ThemeName = "MetroLite";
+            this.btnDecryptUserControl.Click += new System.EventHandler(this.btnDecryptUc_Click);
             // 
-            // btnEncryptUc
+            // btnEncryptUserControl
             // 
-            this.btnEncryptUc.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnEncryptUc.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.btnEncryptUc.DisabledForeColor = System.Drawing.Color.Gray;
-            this.btnEncryptUc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncryptUc.HoverBorderColor = System.Drawing.Color.White;
-            this.btnEncryptUc.HoverColor = System.Drawing.Color.White;
-            this.btnEncryptUc.HoverTextColor = System.Drawing.Color.Maroon;
-            this.btnEncryptUc.Location = new System.Drawing.Point(39, 87);
-            this.btnEncryptUc.Name = "btnEncryptUc";
-            this.btnEncryptUc.NormalBorderColor = System.Drawing.Color.White;
-            this.btnEncryptUc.NormalColor = System.Drawing.Color.White;
-            this.btnEncryptUc.NormalTextColor = System.Drawing.Color.Black;
-            this.btnEncryptUc.PressBorderColor = System.Drawing.Color.White;
-            this.btnEncryptUc.PressColor = System.Drawing.Color.White;
-            this.btnEncryptUc.PressTextColor = System.Drawing.Color.Maroon;
-            this.btnEncryptUc.Size = new System.Drawing.Size(140, 24);
-            this.btnEncryptUc.Style = MetroSet_UI.Design.Style.Custom;
-            this.btnEncryptUc.StyleManager = null;
-            this.btnEncryptUc.TabIndex = 18;
-            this.btnEncryptUc.Text = "Kriptiraj";
-            this.btnEncryptUc.ThemeAuthor = "Narwin";
-            this.btnEncryptUc.ThemeName = "MetroLite";
-            this.btnEncryptUc.Click += new System.EventHandler(this.btnEncryptUc_Click);
+            this.btnEncryptUserControl.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnEncryptUserControl.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnEncryptUserControl.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnEncryptUserControl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncryptUserControl.HoverBorderColor = System.Drawing.Color.White;
+            this.btnEncryptUserControl.HoverColor = System.Drawing.Color.White;
+            this.btnEncryptUserControl.HoverTextColor = System.Drawing.Color.Maroon;
+            this.btnEncryptUserControl.Location = new System.Drawing.Point(39, 87);
+            this.btnEncryptUserControl.Name = "btnEncryptUserControl";
+            this.btnEncryptUserControl.NormalBorderColor = System.Drawing.Color.White;
+            this.btnEncryptUserControl.NormalColor = System.Drawing.Color.White;
+            this.btnEncryptUserControl.NormalTextColor = System.Drawing.Color.Black;
+            this.btnEncryptUserControl.PressBorderColor = System.Drawing.Color.White;
+            this.btnEncryptUserControl.PressColor = System.Drawing.Color.White;
+            this.btnEncryptUserControl.PressTextColor = System.Drawing.Color.Maroon;
+            this.btnEncryptUserControl.Size = new System.Drawing.Size(140, 24);
+            this.btnEncryptUserControl.Style = MetroSet_UI.Design.Style.Custom;
+            this.btnEncryptUserControl.StyleManager = null;
+            this.btnEncryptUserControl.TabIndex = 18;
+            this.btnEncryptUserControl.Text = "Encrypt";
+            this.btnEncryptUserControl.ThemeAuthor = "Narwin";
+            this.btnEncryptUserControl.ThemeName = "MetroLite";
+            this.btnEncryptUserControl.Click += new System.EventHandler(this.btnEncryptUc_Click);
             // 
             // encryptUserControl1
             // 
@@ -218,10 +218,10 @@
             this.Controls.Add(this.pnlHash);
             this.Controls.Add(this.pnlDecrypt);
             this.Controls.Add(this.pnlDigitalSignature);
-            this.Controls.Add(this.btnDigitalSignature);
-            this.Controls.Add(this.btnHashUc);
-            this.Controls.Add(this.btnDecryptUc);
-            this.Controls.Add(this.btnEncryptUc);
+            this.Controls.Add(this.btnDigitalSignatureUserControl);
+            this.Controls.Add(this.btnCalculateHashUserControl);
+            this.Controls.Add(this.btnDecryptUserControl);
+            this.Controls.Add(this.btnEncryptUserControl);
             this.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(73)))));
             this.Name = "MainForm";
             this.SmallLineColor1 = System.Drawing.Color.Maroon;
@@ -241,10 +241,10 @@
         private MetroSet_UI.Controls.MetroSetPanel pnlHash;
         private MetroSet_UI.Controls.MetroSetPanel pnlDecrypt;
         private MetroSet_UI.Controls.MetroSetPanel pnlDigitalSignature;
-        private MetroSet_UI.Controls.MetroSetButton btnDigitalSignature;
-        private MetroSet_UI.Controls.MetroSetButton btnHashUc;
-        private MetroSet_UI.Controls.MetroSetButton btnDecryptUc;
-        private MetroSet_UI.Controls.MetroSetButton btnEncryptUc;
+        private MetroSet_UI.Controls.MetroSetButton btnDigitalSignatureUserControl;
+        private MetroSet_UI.Controls.MetroSetButton btnCalculateHashUserControl;
+        private MetroSet_UI.Controls.MetroSetButton btnDecryptUserControl;
+        private MetroSet_UI.Controls.MetroSetButton btnEncryptUserControl;
         private EncryptUserControl encryptUserControl1;
     }
 }

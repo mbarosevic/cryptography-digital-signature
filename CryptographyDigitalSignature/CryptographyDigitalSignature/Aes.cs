@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.IO;
+
 namespace CryptographyDigitalSignature
 {
     public sealed class Aes
@@ -34,7 +36,7 @@ namespace CryptographyDigitalSignature
 
         public string key = "";
         public string iVector = "";
-        const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890+?=!-_";
+        const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         int length = 16;
 
         public void GenerateKey()
@@ -82,7 +84,11 @@ namespace CryptographyDigitalSignature
 
                 aes.Key = Encoding.UTF8.GetBytes(key);
                 aes.IV = Encoding.UTF8.GetBytes(iVector);
-
+                string fileName = @"C:\Users\Matija Barosevic\Documents\kljuciIV.txt";
+                using (StreamWriter swSaveKey = File.CreateText(fileName))
+                {
+                    swSaveKey.WriteLine(key + " " + iVector);
+                }
                 aes.Mode = CipherMode.CBC;
                 aes.Padding = PaddingMode.Zeros;
 

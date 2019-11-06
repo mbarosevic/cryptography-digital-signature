@@ -36,6 +36,7 @@
             this.btnCalculateHashUserControl = new MetroSet_UI.Controls.MetroSetButton();
             this.btnDecryptUserControl = new MetroSet_UI.Controls.MetroSetButton();
             this.btnEncryptUserControl = new MetroSet_UI.Controls.MetroSetButton();
+            this.decryptUserControl1 = new CryptographyDigitalSignature.DecryptUserControl();
             this.encryptUserControl1 = new CryptographyDigitalSignature.EncryptUserControl();
             this.SuspendLayout();
             // 
@@ -199,6 +200,14 @@
             this.btnEncryptUserControl.ThemeName = "MetroLite";
             this.btnEncryptUserControl.Click += new System.EventHandler(this.btnEncryptUc_Click);
             // 
+            // decryptUserControl1
+            // 
+            this.decryptUserControl1.BackColor = System.Drawing.Color.White;
+            this.decryptUserControl1.Location = new System.Drawing.Point(32, 113);
+            this.decryptUserControl1.Name = "decryptUserControl1";
+            this.decryptUserControl1.Size = new System.Drawing.Size(728, 495);
+            this.decryptUserControl1.TabIndex = 27;
+            // 
             // encryptUserControl1
             // 
             this.encryptUserControl1.BackColor = System.Drawing.Color.White;
@@ -213,7 +222,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(775, 612);
-            this.Controls.Add(this.encryptUserControl1);
             this.Controls.Add(this.pnlEncrypt);
             this.Controls.Add(this.pnlHash);
             this.Controls.Add(this.pnlDecrypt);
@@ -222,6 +230,8 @@
             this.Controls.Add(this.btnCalculateHashUserControl);
             this.Controls.Add(this.btnDecryptUserControl);
             this.Controls.Add(this.btnEncryptUserControl);
+            this.Controls.Add(this.decryptUserControl1);
+            this.Controls.Add(this.encryptUserControl1);
             this.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(73)))));
             this.Name = "MainForm";
             this.SmallLineColor1 = System.Drawing.Color.Maroon;
@@ -246,6 +256,7 @@
         private MetroSet_UI.Controls.MetroSetButton btnDecryptUserControl;
         private MetroSet_UI.Controls.MetroSetButton btnEncryptUserControl;
         private EncryptUserControl encryptUserControl1;
+        private DecryptUserControl decryptUserControl1;
     }
 }
 

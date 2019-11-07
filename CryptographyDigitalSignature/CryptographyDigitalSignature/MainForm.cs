@@ -16,13 +16,15 @@ namespace CryptographyDigitalSignature
         public MainForm()
         {
             InitializeComponent();
+            HidePanels();
+            pnlEncrypt.Show();
+            decryptUserControl1.Hide();
+            encryptUserControl1.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            HidePanels();
-            pnlEncrypt.Show();
-            encryptUserControl1.Show();
+            
         }
 
         private void btnEncryptUc_Click(object sender, EventArgs e)
@@ -88,7 +90,7 @@ namespace CryptographyDigitalSignature
             return fileContent;
         }
 
-        public void SaveFileDialog(string key)
+        public void SaveFileDialog(string key, string iv)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -97,7 +99,7 @@ namespace CryptographyDigitalSignature
                 string fileName = saveFileDialog.FileName;
                 using(StreamWriter swSaveKey = File.CreateText(fileName))
                 {
-                    swSaveKey.WriteLine(key);
+                    swSaveKey.WriteLine("Key: " + key + "\n" + "IV: " + iv);
                 }
             }
         }

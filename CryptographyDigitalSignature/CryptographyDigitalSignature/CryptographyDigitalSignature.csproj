@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aes.cs" />
+    <Compile Include="AesAlgorithm.cs" />
     <Compile Include="DecryptUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

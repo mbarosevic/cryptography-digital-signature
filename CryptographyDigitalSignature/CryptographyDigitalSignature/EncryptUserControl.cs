@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace CryptographyDigitalSignature
 {
@@ -20,7 +22,7 @@ namespace CryptographyDigitalSignature
             cbxEncryptionAlgorithm.SelectedIndex = 0;
         }
         MainForm mainForm;
-        Aes aes = new Aes();
+        AesAlgorithm aesAlg = new AesAlgorithm();
 
         string plainText = string.Empty;
         private void btnEncrypt_Click(object sender, EventArgs e)
@@ -34,10 +36,17 @@ namespace CryptographyDigitalSignature
                 Encrypt(tbxPlainText.Text);
             }
         }
-
+        private string key = string.Empty;
+        private string iv = string.Empty;
         public void Encrypt(string plainText)
         {
-            tbxEncryptedText.Text = aes.Encrypt(plainText);
+            using(Aes aes = Aes.Create())
+            {
+                byte[] encrypted = aesAlg.EncryptToByteArray(plainText, aes.Key, aes.IV);
+                tbxEncryptedText.Text = Convert.ToBase64String(encrypted);
+                key = Convert.ToBase64String(aes.Key);
+                iv = Convert.ToBase64String(aes.IV);
+            }
         }
 
         private void btnOpenFileDialog_Click(object sender, EventArgs e)
@@ -52,7 +61,10 @@ namespace CryptographyDigitalSignature
         private void btnSaveSecretKey_Click(object sender, EventArgs e)
         {
             mainForm = new MainForm();
-            mainForm.SaveFileDialog(aes.key);
+            using(Aes aes = Aes.Create())
+            {
+                mainForm.SaveFileDialog(key, iv);
+            }
         }
     }
 }

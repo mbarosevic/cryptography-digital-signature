@@ -32,8 +32,5 @@ namespace CryptographyDigitalSignature
                 }
             }
         }
-
-        public static RSAParameters publicKey;
-        private static RSAParameters privateKey;
     }
 }

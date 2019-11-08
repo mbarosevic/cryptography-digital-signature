@@ -43,13 +43,6 @@ namespace CryptographyDigitalSignature
             byte[] key = Convert.FromBase64String(lines[0]);
             byte[] iv = Convert.FromBase64String(lines[1]);
             tbxDecryptedText.Text = aesAlg.DecryptFromByteArray(encryptedText, key, iv);
-/*
-            using (Aes aesAlgorithm = Aes.Create())
-            {
-                aesAlgorithm.Key = key;
-                aesAlgorithm.IV = iv;
-                tbxDecryptedText.Text = aesAlg.DecryptFromByteArray(encryptedText, aesAlgorithm.Key, aesAlgorithm.IV);
-            }*/
         }
     }
 }

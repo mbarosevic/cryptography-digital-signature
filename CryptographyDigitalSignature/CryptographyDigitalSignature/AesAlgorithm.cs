@@ -61,5 +61,28 @@ namespace CryptographyDigitalSignature
             return encrypted;
         }
 
+        public string DecryptFromByteArray(byte[] encryptedText, byte[] Key, byte[] IV)
+        {
+            string plainText = null;
+            using(Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+                using (MemoryStream msDecrypt = new MemoryStream(encryptedText))
+                {
+                    using(CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using(StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            plainText = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+            return plainText;
+        }
+
     }
 }

@@ -99,7 +99,7 @@ namespace CryptographyDigitalSignature
                 string fileName = saveFileDialog.FileName;
                 using(StreamWriter swSaveKey = File.CreateText(fileName))
                 {
-                    swSaveKey.WriteLine("Key: " + key + "\n" + "IV: " + iv);
+                    swSaveKey.WriteLine(key + Environment.NewLine + iv);
                 }
             }
         }

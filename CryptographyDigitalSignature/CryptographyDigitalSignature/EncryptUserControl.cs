@@ -40,13 +40,22 @@ namespace CryptographyDigitalSignature
         private string iv = string.Empty;
         public void Encrypt(string plainText)
         {
-            using(Aes aes = Aes.Create())
+            try
             {
-                byte[] encrypted = aesAlg.EncryptToByteArray(plainText, aes.Key, aes.IV);
-                tbxEncryptedText.Text = Convert.ToBase64String(encrypted);
-                key = Convert.ToBase64String(aes.Key);
-                iv = Convert.ToBase64String(aes.IV);
+                using (Aes aes = Aes.Create())
+                {
+                    byte[] encrypted = aesAlg.EncryptToByteArray(plainText, aes.Key, aes.IV);
+                    tbxEncryptedText.Text = Convert.ToBase64String(encrypted);
+                    key = Convert.ToBase64String(aes.Key);
+                    iv = Convert.ToBase64String(aes.IV);
+                    lblEncryptionStatus.Text = "Text encrypted successfully!";
+                }
             }
+            catch
+            {
+                lblEncryptionStatus.Text = "Encryption failed";
+            }
+            
         }
 
         private void btnOpenFileDialog_Click(object sender, EventArgs e)
@@ -55,6 +64,10 @@ namespace CryptographyDigitalSignature
             tbxEncryptedText.Text = "";
             mainForm = new MainForm();
             plainText = mainForm.OpenFileDialog();
+            if(mainForm.path != "")
+            {
+                lblChosenFile.Text = "Path: " + mainForm.path;
+            }
             tbxPlainText.Text = plainText;
         }
 

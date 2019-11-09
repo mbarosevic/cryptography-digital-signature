@@ -240,7 +240,6 @@
             this.Text = "Cryptography Digital Signature";
             this.TextColor = System.Drawing.Color.Black;
             this.ThemeName = "MetroDark";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }

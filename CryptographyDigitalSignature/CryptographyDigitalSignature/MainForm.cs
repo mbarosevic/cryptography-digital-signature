@@ -22,11 +22,6 @@ namespace CryptographyDigitalSignature
             encryptUserControl1.Show();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnEncryptUc_Click(object sender, EventArgs e)
         {
             HidePanels();
@@ -65,12 +60,10 @@ namespace CryptographyDigitalSignature
                 }
             }
         }
-
+        public string path = string.Empty;
         public string OpenFileDialog()
         {
             string fileContent = string.Empty;
-            string path = string.Empty;
-
             using (OpenFileDialog openFile = new OpenFileDialog())
             {
                 openFile.InitialDirectory = @"C:\";

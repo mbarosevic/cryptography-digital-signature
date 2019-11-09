@@ -20,9 +20,12 @@ namespace CryptographyDigitalSignature
             cbxDecryptionAlgorithm.SelectedIndex = 0;
         }
         MainForm mainForm;
-        AesAlgorithm aesAlg = new AesAlgorithm();
+        AesAlgorithm aesAlgorithm = new AesAlgorithm();
         string plainText = string.Empty;
         string keyAndIV = string.Empty;
+        byte[] encryptedText;
+        byte[] key;
+        byte[] iv;
         private void btnOpenFileDialog_Click(object sender, EventArgs e)
         {
             mainForm = new MainForm();
@@ -39,10 +42,14 @@ namespace CryptographyDigitalSignature
                         StringSplitOptions.None
                         );
 
-            byte[] encryptedText = Convert.FromBase64String(tbxEncryptedText.Text);
-            byte[] key = Convert.FromBase64String(lines[0]);
-            byte[] iv = Convert.FromBase64String(lines[1]);
-            tbxDecryptedText.Text = aesAlg.DecryptFromByteArray(encryptedText, key, iv);
+            encryptedText = Convert.FromBase64String(tbxEncryptedText.Text);
+            key = Convert.FromBase64String(lines[0]);
+            iv = Convert.FromBase64String(lines[1]);
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            tbxDecryptedText.Text = aesAlgorithm.DecryptFromByteArray(encryptedText, key, iv);
         }
     }
 }

@@ -31,12 +31,6 @@ namespace CryptographyDigitalSignature
 
         public byte[] EncryptToByteArray(string plainText, byte[] Key, byte[] IV)
         {
-            //check arguments -> call method for check
-            /*
-            if(plainText == null || plainText.Length <= 0)
-            {
-
-            }*/
             byte[] encrypted;
 
             using (Aes aes = Aes.Create())

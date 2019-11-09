@@ -37,6 +37,7 @@
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.tbxPlainText = new MetroSet_UI.Controls.MetroSetTextBox();
             this.btnSaveSecretKeyAndIv = new MetroSet_UI.Controls.MetroSetButton();
+            this.metroSetButton1 = new MetroSet_UI.Controls.MetroSetButton();
             this.SuspendLayout();
             // 
             // cbxEncryptionAlgorithm
@@ -56,7 +57,7 @@
             this.cbxEncryptionAlgorithm.FormattingEnabled = true;
             this.cbxEncryptionAlgorithm.ItemHeight = 20;
             this.cbxEncryptionAlgorithm.Location = new System.Drawing.Point(375, 64);
-            this.cbxEncryptionAlgorithm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxEncryptionAlgorithm.Margin = new System.Windows.Forms.Padding(4);
             this.cbxEncryptionAlgorithm.Name = "cbxEncryptionAlgorithm";
             this.cbxEncryptionAlgorithm.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cbxEncryptionAlgorithm.SelectedItemForeColor = System.Drawing.Color.White;
@@ -91,7 +92,7 @@
             this.btnOpenFileDialog.HoverColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.HoverTextColor = System.Drawing.Color.White;
             this.btnOpenFileDialog.Location = new System.Drawing.Point(64, 278);
-            this.btnOpenFileDialog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenFileDialog.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenFileDialog.Name = "btnOpenFileDialog";
             this.btnOpenFileDialog.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.NormalColor = System.Drawing.Color.Maroon;
@@ -132,7 +133,7 @@
             this.btnEncrypt.HoverColor = System.Drawing.Color.Maroon;
             this.btnEncrypt.HoverTextColor = System.Drawing.Color.White;
             this.btnEncrypt.Location = new System.Drawing.Point(324, 278);
-            this.btnEncrypt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEncrypt.Margin = new System.Windows.Forms.Padding(4);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnEncrypt.NormalColor = System.Drawing.Color.Maroon;
@@ -163,7 +164,7 @@
             this.tbxEncryptedText.Image = null;
             this.tbxEncryptedText.Lines = null;
             this.tbxEncryptedText.Location = new System.Drawing.Point(64, 411);
-            this.tbxEncryptedText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxEncryptedText.Margin = new System.Windows.Forms.Padding(4);
             this.tbxEncryptedText.MaxLength = 32767;
             this.tbxEncryptedText.Multiline = true;
             this.tbxEncryptedText.Name = "tbxEncryptedText";
@@ -206,7 +207,7 @@
             this.tbxPlainText.Image = null;
             this.tbxPlainText.Lines = null;
             this.tbxPlainText.Location = new System.Drawing.Point(64, 112);
-            this.tbxPlainText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPlainText.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPlainText.MaxLength = 32767;
             this.tbxPlainText.Multiline = false;
             this.tbxPlainText.Name = "tbxPlainText";
@@ -230,8 +231,8 @@
             this.btnSaveSecretKeyAndIv.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnSaveSecretKeyAndIv.HoverColor = System.Drawing.Color.Maroon;
             this.btnSaveSecretKeyAndIv.HoverTextColor = System.Drawing.Color.White;
-            this.btnSaveSecretKeyAndIv.Location = new System.Drawing.Point(64, 608);
-            this.btnSaveSecretKeyAndIv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveSecretKeyAndIv.Location = new System.Drawing.Point(64, 647);
+            this.btnSaveSecretKeyAndIv.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveSecretKeyAndIv.Name = "btnSaveSecretKeyAndIv";
             this.btnSaveSecretKeyAndIv.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnSaveSecretKeyAndIv.NormalColor = System.Drawing.Color.Maroon;
@@ -248,11 +249,38 @@
             this.btnSaveSecretKeyAndIv.ThemeName = "MetroLite";
             this.btnSaveSecretKeyAndIv.Click += new System.EventHandler(this.btnSaveSecretKey_Click);
             // 
+            // metroSetButton1
+            // 
+            this.metroSetButton1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.metroSetButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.metroSetButton1.DisabledForeColor = System.Drawing.Color.Gray;
+            this.metroSetButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroSetButton1.HoverBorderColor = System.Drawing.Color.Maroon;
+            this.metroSetButton1.HoverColor = System.Drawing.Color.Maroon;
+            this.metroSetButton1.HoverTextColor = System.Drawing.Color.White;
+            this.metroSetButton1.Location = new System.Drawing.Point(64, 583);
+            this.metroSetButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroSetButton1.Name = "metroSetButton1";
+            this.metroSetButton1.NormalBorderColor = System.Drawing.Color.Maroon;
+            this.metroSetButton1.NormalColor = System.Drawing.Color.Maroon;
+            this.metroSetButton1.NormalTextColor = System.Drawing.Color.White;
+            this.metroSetButton1.PressBorderColor = System.Drawing.Color.Maroon;
+            this.metroSetButton1.PressColor = System.Drawing.Color.Maroon;
+            this.metroSetButton1.PressTextColor = System.Drawing.Color.White;
+            this.metroSetButton1.Size = new System.Drawing.Size(232, 46);
+            this.metroSetButton1.Style = MetroSet_UI.Design.Style.Custom;
+            this.metroSetButton1.StyleManager = null;
+            this.metroSetButton1.TabIndex = 17;
+            this.metroSetButton1.Text = "Save Key and IV";
+            this.metroSetButton1.ThemeAuthor = "Narwin";
+            this.metroSetButton1.ThemeName = "MetroLite";
+            // 
             // EncryptUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.metroSetButton1);
             this.Controls.Add(this.btnSaveSecretKeyAndIv);
             this.Controls.Add(this.cbxEncryptionAlgorithm);
             this.Controls.Add(this.metroSetLabel3);
@@ -262,7 +290,7 @@
             this.Controls.Add(this.tbxEncryptedText);
             this.Controls.Add(this.metroSetLabel1);
             this.Controls.Add(this.tbxPlainText);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EncryptUserControl";
             this.Size = new System.Drawing.Size(1092, 742);
             this.ResumeLayout(false);
@@ -280,5 +308,6 @@
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
         private MetroSet_UI.Controls.MetroSetTextBox tbxPlainText;
         private MetroSet_UI.Controls.MetroSetButton btnSaveSecretKeyAndIv;
+        private MetroSet_UI.Controls.MetroSetButton metroSetButton1;
     }
 }

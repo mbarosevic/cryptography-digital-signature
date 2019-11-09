@@ -56,7 +56,7 @@
             this.cbxDecryptionAlgorithm.FormattingEnabled = true;
             this.cbxDecryptionAlgorithm.ItemHeight = 20;
             this.cbxDecryptionAlgorithm.Location = new System.Drawing.Point(406, 64);
-            this.cbxDecryptionAlgorithm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxDecryptionAlgorithm.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDecryptionAlgorithm.Name = "cbxDecryptionAlgorithm";
             this.cbxDecryptionAlgorithm.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cbxDecryptionAlgorithm.SelectedItemForeColor = System.Drawing.Color.White;
@@ -91,7 +91,7 @@
             this.btnOpenFileDialog.HoverColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.HoverTextColor = System.Drawing.Color.White;
             this.btnOpenFileDialog.Location = new System.Drawing.Point(69, 378);
-            this.btnOpenFileDialog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenFileDialog.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpenFileDialog.Name = "btnOpenFileDialog";
             this.btnOpenFileDialog.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.NormalColor = System.Drawing.Color.Maroon;
@@ -132,7 +132,7 @@
             this.btnDecrypt.HoverColor = System.Drawing.Color.Maroon;
             this.btnDecrypt.HoverTextColor = System.Drawing.Color.White;
             this.btnDecrypt.Location = new System.Drawing.Point(611, 378);
-            this.btnDecrypt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDecrypt.Margin = new System.Windows.Forms.Padding(4);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnDecrypt.NormalColor = System.Drawing.Color.Maroon;
@@ -147,6 +147,7 @@
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.ThemeAuthor = "Narwin";
             this.btnDecrypt.ThemeName = "MetroLite";
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // tbxDecryptedText
             // 
@@ -162,7 +163,7 @@
             this.tbxDecryptedText.Image = null;
             this.tbxDecryptedText.Lines = null;
             this.tbxDecryptedText.Location = new System.Drawing.Point(69, 468);
-            this.tbxDecryptedText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxDecryptedText.Margin = new System.Windows.Forms.Padding(4);
             this.tbxDecryptedText.MaxLength = 32767;
             this.tbxDecryptedText.Multiline = true;
             this.tbxDecryptedText.Name = "tbxDecryptedText";
@@ -205,7 +206,7 @@
             this.tbxEncryptedText.Image = null;
             this.tbxEncryptedText.Lines = null;
             this.tbxEncryptedText.Location = new System.Drawing.Point(69, 114);
-            this.tbxEncryptedText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxEncryptedText.Margin = new System.Windows.Forms.Padding(4);
             this.tbxEncryptedText.MaxLength = 32767;
             this.tbxEncryptedText.Multiline = false;
             this.tbxEncryptedText.Name = "tbxEncryptedText";
@@ -261,7 +262,7 @@
             this.Controls.Add(this.tbxDecryptedText);
             this.Controls.Add(this.metroSetLabel1);
             this.Controls.Add(this.tbxEncryptedText);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DecryptUserControl";
             this.Size = new System.Drawing.Size(1092, 742);
             this.ResumeLayout(false);

@@ -276,6 +276,7 @@
             this.btnSaveEncryptedText.Text = "Save encrypted text";
             this.btnSaveEncryptedText.ThemeAuthor = "Narwin";
             this.btnSaveEncryptedText.ThemeName = "MetroLite";
+            this.btnSaveEncryptedText.Click += new System.EventHandler(this.btnSaveEncryptedText_Click);
             // 
             // lblChosenFile
             // 

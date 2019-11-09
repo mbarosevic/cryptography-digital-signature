@@ -74,10 +74,13 @@ namespace CryptographyDigitalSignature
         private void btnSaveSecretKey_Click(object sender, EventArgs e)
         {
             mainForm = new MainForm();
-            using(Aes aes = Aes.Create())
-            {
-                mainForm.SaveFileDialog(key, iv);
-            }
+            mainForm.SaveFileDialog(null, key, iv);
+        }
+
+        private void btnSaveEncryptedText_Click(object sender, EventArgs e)
+        {
+            mainForm = new MainForm();
+            mainForm.SaveFileDialog(tbxEncryptedText.Text, null, null);
         }
     }
 }

@@ -19,26 +19,36 @@ namespace CryptographyDigitalSignature
             InitializeComponent();
 
             cbxEncryptionAlgorithm.Items.Add("AES");
+            cbxEncryptionAlgorithm.Items.Add("RSA");
             cbxEncryptionAlgorithm.SelectedIndex = 0;
         }
         MainForm mainForm;
         AesAlgorithm aesAlg = new AesAlgorithm();
+        RsaAlgorithm rsaAlg = new RsaAlgorithm();
 
         string plainText = string.Empty;
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            if(tbxPlainText.Text == "")
+            string plainText = tbxPlainText.Text;
+            if(plainText == "")
             {
                 MessageBox.Show("Please choose text file or input text!");
             }
             else
             {
-                Encrypt(tbxPlainText.Text);
+                if(cbxEncryptionAlgorithm.SelectedIndex == 0)
+                {
+                    EncryptAes(plainText);
+                }
+                else
+                {
+                    tbxEncryptedText.Text = rsaAlg.Encrypt(plainText);
+                }
             }
         }
         private string key = string.Empty;
         private string iv = string.Empty;
-        public void Encrypt(string plainText)
+        public void EncryptAes(string plainText)
         {
             try
             {

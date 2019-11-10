@@ -70,7 +70,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rsa.cs" />
+    <Compile Include="RsaAlgorithm.cs" />
     <EmbeddedResource Include="DecryptUserControl.resx">
       <DependentUpon>DecryptUserControl.cs</DependentUpon>
     </EmbeddedResource>

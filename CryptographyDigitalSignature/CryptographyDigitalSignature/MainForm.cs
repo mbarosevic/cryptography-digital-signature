@@ -83,7 +83,8 @@ namespace CryptographyDigitalSignature
             return fileContent;
         }
 
-        public void SaveFileDialog(string text, string key, string iv)
+        //SaveFileDialog method for saving key and IV
+        public void SaveFileDialog(string key, string iv)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -92,14 +93,22 @@ namespace CryptographyDigitalSignature
                 string fileName = saveFileDialog.FileName;
                 using(StreamWriter swSave = File.CreateText(fileName))
                 {
-                    if(key != null && iv != null)
-                    {
-                        swSave.WriteLine(key + Environment.NewLine + iv);
-                    }
-                    if(text != null)
-                    {
-                        swSave.WriteLine(text);
-                    }
+                    swSave.WriteLine(key + Environment.NewLine + iv);
+                }
+            }
+        }
+
+        //SaveFileDialog method for saving encrypted text
+        public void SaveFileDialog(string text)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = saveFileDialog.FileName;
+                using (StreamWriter swSave = File.CreateText(fileName))
+                {
+                    swSave.WriteLine(text);
                 }
             }
         }

@@ -84,13 +84,28 @@ namespace CryptographyDigitalSignature
         private void btnSaveSecretKey_Click(object sender, EventArgs e)
         {
             mainForm = new MainForm();
-            mainForm.SaveFileDialog(null, key, iv);
+            if(key != null && iv != null)
+            {
+                mainForm.SaveFileDialog(key, iv);
+            }
+            else
+            {
+                MessageBox.Show("Text is not encrypted successfully. Try again!", "Error");
+            }
         }
 
         private void btnSaveEncryptedText_Click(object sender, EventArgs e)
         {
+            string encryptedText = tbxEncryptedText.Text;
             mainForm = new MainForm();
-            mainForm.SaveFileDialog(tbxEncryptedText.Text, null, null);
+            if(encryptedText != "")
+            {
+                mainForm.SaveFileDialog(tbxEncryptedText.Text);
+            }
+            else
+            {
+                MessageBox.Show("Text is not encrypted successfully. Try again!", "Error");
+            }
         }
     }
 }

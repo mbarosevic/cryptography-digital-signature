@@ -140,6 +140,7 @@
             this.btnCalculateHash.Text = "Hash";
             this.btnCalculateHash.ThemeAuthor = "Narwin";
             this.btnCalculateHash.ThemeName = "MetroLite";
+            this.btnCalculateHash.Click += new System.EventHandler(this.btnCalculateHash_Click);
             // 
             // tbxHash
             // 

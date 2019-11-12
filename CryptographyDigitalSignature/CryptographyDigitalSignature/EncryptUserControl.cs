@@ -22,15 +22,16 @@ namespace CryptographyDigitalSignature
             cbxEncryptionAlgorithm.Items.Add("RSA");
             cbxEncryptionAlgorithm.SelectedIndex = 0;
         }
-        MainForm mainForm;
-        AesAlgorithm aesAlg = new AesAlgorithm();
-        RsaAlgorithm rsaAlg = new RsaAlgorithm();
+
+        private MainForm mainForm;
+        readonly AesAlgorithm aesAlg = new AesAlgorithm();
+        readonly RsaAlgorithm rsaAlg = new RsaAlgorithm();
 
         string plainText = string.Empty;
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
-            if(plainText == "")
+            if(plainText == string.Empty)
             {
                 MessageBox.Show("Please choose text file or input text!");
             }
@@ -70,11 +71,11 @@ namespace CryptographyDigitalSignature
 
         private void btnOpenFileDialog_Click(object sender, EventArgs e)
         {
-            tbxPlainText.Text = "";
-            tbxEncryptedText.Text = "";
+            tbxPlainText.Text = string.Empty;
+            tbxEncryptedText.Text = string.Empty;
             mainForm = new MainForm();
             plainText = mainForm.OpenFileDialog();
-            if(mainForm.path != "")
+            if(mainForm.path != string.Empty)
             {
                 lblChosenFile.Text = "Path: " + mainForm.path;
             }
@@ -98,7 +99,7 @@ namespace CryptographyDigitalSignature
         {
             string encryptedText = tbxEncryptedText.Text;
             mainForm = new MainForm();
-            if(encryptedText != "")
+            if(encryptedText != string.Empty)
             {
                 mainForm.SaveFileDialog(tbxEncryptedText.Text);
             }

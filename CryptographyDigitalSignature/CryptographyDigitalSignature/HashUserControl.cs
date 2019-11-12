@@ -16,5 +16,15 @@ namespace CryptographyDigitalSignature
         {
             InitializeComponent();
         }
+
+        readonly Sha sha = new Sha();
+        private void btnCalculateHash_Click(object sender, EventArgs e)
+        {
+            string plainText = tbxPlainText.Text;
+            if(plainText != string.Empty)
+            {
+                tbxHash.Text = sha.HashCalculate(plainText);
+            }
+        }
     }
 }

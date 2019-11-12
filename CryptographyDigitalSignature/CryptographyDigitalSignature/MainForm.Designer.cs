@@ -38,6 +38,7 @@
             this.btnEncryptUserControl = new MetroSet_UI.Controls.MetroSetButton();
             this.decryptUserControl1 = new CryptographyDigitalSignature.DecryptUserControl();
             this.encryptUserControl1 = new CryptographyDigitalSignature.EncryptUserControl();
+            this.hashUserControl1 = new CryptographyDigitalSignature.HashUserControl();
             this.SuspendLayout();
             // 
             // pnlEncrypt
@@ -216,6 +217,14 @@
             this.encryptUserControl1.Size = new System.Drawing.Size(728, 488);
             this.encryptUserControl1.TabIndex = 26;
             // 
+            // hashUserControl1
+            // 
+            this.hashUserControl1.BackColor = System.Drawing.Color.White;
+            this.hashUserControl1.Location = new System.Drawing.Point(39, 113);
+            this.hashUserControl1.Name = "hashUserControl1";
+            this.hashUserControl1.Size = new System.Drawing.Size(728, 495);
+            this.hashUserControl1.TabIndex = 28;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -230,6 +239,7 @@
             this.Controls.Add(this.btnCalculateHashUserControl);
             this.Controls.Add(this.btnDecryptUserControl);
             this.Controls.Add(this.btnEncryptUserControl);
+            this.Controls.Add(this.hashUserControl1);
             this.Controls.Add(this.decryptUserControl1);
             this.Controls.Add(this.encryptUserControl1);
             this.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(73)))));
@@ -256,6 +266,7 @@
         private MetroSet_UI.Controls.MetroSetButton btnEncryptUserControl;
         private EncryptUserControl encryptUserControl1;
         private DecryptUserControl decryptUserControl1;
+        private HashUserControl hashUserControl1;
     }
 }
 

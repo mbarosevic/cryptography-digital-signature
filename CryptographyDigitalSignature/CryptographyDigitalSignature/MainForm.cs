@@ -16,25 +16,32 @@ namespace CryptographyDigitalSignature
         public MainForm()
         {
             InitializeComponent();
+
             HidePanels();
             pnlEncrypt.Show();
+
             decryptUserControl1.Hide();
+            hashUserControl1.Hide();
             encryptUserControl1.Show();
         }
 
         private void btnEncryptUc_Click(object sender, EventArgs e)
         {
             HidePanels();
-            decryptUserControl1.Hide();
             pnlEncrypt.Show();
+
+            decryptUserControl1.Hide();
+            hashUserControl1.Hide();
             encryptUserControl1.Show();
         }
 
         private void btnDecryptUc_Click(object sender, EventArgs e)
         {
             HidePanels();
-            encryptUserControl1.Hide();
             pnlDecrypt.Show();
+
+            encryptUserControl1.Hide();
+            hashUserControl1.Hide();
             decryptUserControl1.Show();
         }
 
@@ -42,6 +49,10 @@ namespace CryptographyDigitalSignature
         {
             HidePanels();
             pnlHash.Show();
+
+            encryptUserControl1.Hide();
+            decryptUserControl1.Hide();
+            hashUserControl1.Show();
         }
 
         private void btnDigitalSignature_Click(object sender, EventArgs e)
@@ -60,6 +71,7 @@ namespace CryptographyDigitalSignature
                 }
             }
         }
+
         public string path = string.Empty;
         public string OpenFileDialog()
         {
@@ -86,14 +98,18 @@ namespace CryptographyDigitalSignature
         //SaveFileDialog method for saving key and IV
         public void SaveFileDialog(string key, string iv)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                string fileName = saveFileDialog.FileName;
-                using(StreamWriter swSave = File.CreateText(fileName))
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+            })
+            {
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    swSave.WriteLine(key + Environment.NewLine + iv);
+                    string fileName = saveFileDialog.FileName;
+                    using (StreamWriter swSave = File.CreateText(fileName))
+                    {
+                        swSave.WriteLine(key + Environment.NewLine + iv);
+                    }
                 }
             }
         }
@@ -101,14 +117,18 @@ namespace CryptographyDigitalSignature
         //SaveFileDialog method for saving encrypted text
         public void SaveFileDialog(string text)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                string fileName = saveFileDialog.FileName;
-                using (StreamWriter swSave = File.CreateText(fileName))
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+            })
+            {
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    swSave.WriteLine(text);
+                    string fileName = saveFileDialog.FileName;
+                    using (StreamWriter swSave = File.CreateText(fileName))
+                    {
+                        swSave.WriteLine(text);
+                    }
                 }
             }
         }

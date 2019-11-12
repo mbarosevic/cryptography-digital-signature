@@ -17,6 +17,7 @@ namespace CryptographyDigitalSignature
             InitializeComponent();
 
             cbxDecryptionAlgorithm.Items.Add("AES");
+            cbxDecryptionAlgorithm.Items.Add("RSA");
             cbxDecryptionAlgorithm.SelectedIndex = 0;
         }
         MainForm mainForm;

@@ -39,6 +39,7 @@
             this.decryptUserControl1 = new CryptographyDigitalSignature.DecryptUserControl();
             this.encryptUserControl1 = new CryptographyDigitalSignature.EncryptUserControl();
             this.hashUserControl1 = new CryptographyDigitalSignature.HashUserControl();
+            this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             this.SuspendLayout();
             // 
             // pnlEncrypt
@@ -225,12 +226,38 @@
             this.hashUserControl1.Size = new System.Drawing.Size(728, 495);
             this.hashUserControl1.TabIndex = 28;
             // 
+            // metroSetControlBox1
+            // 
+            this.metroSetControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroSetControlBox1.CloseHoverBackColor = System.Drawing.Color.Maroon;
+            this.metroSetControlBox1.CloseHoverForeColor = System.Drawing.SystemColors.Control;
+            this.metroSetControlBox1.CloseNormalForeColor = System.Drawing.SystemColors.Control;
+            this.metroSetControlBox1.DisabledForeColor = System.Drawing.Color.DimGray;
+            this.metroSetControlBox1.Location = new System.Drawing.Point(676, 1);
+            this.metroSetControlBox1.MaximizeBox = true;
+            this.metroSetControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.metroSetControlBox1.MaximizeHoverForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.MaximizeNormalForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.MinimizeBox = true;
+            this.metroSetControlBox1.MinimizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.metroSetControlBox1.MinimizeHoverForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.MinimizeNormalForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.Name = "metroSetControlBox1";
+            this.metroSetControlBox1.Size = new System.Drawing.Size(100, 25);
+            this.metroSetControlBox1.Style = MetroSet_UI.Design.Style.Custom;
+            this.metroSetControlBox1.StyleManager = null;
+            this.metroSetControlBox1.TabIndex = 29;
+            this.metroSetControlBox1.Text = "metroSetControlBox1";
+            this.metroSetControlBox1.ThemeAuthor = "Narwin";
+            this.metroSetControlBox1.ThemeName = "MetroLite";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(775, 612);
+            this.Controls.Add(this.metroSetControlBox1);
             this.Controls.Add(this.pnlEncrypt);
             this.Controls.Add(this.pnlHash);
             this.Controls.Add(this.pnlDecrypt);
@@ -267,6 +294,7 @@
         private EncryptUserControl encryptUserControl1;
         private DecryptUserControl decryptUserControl1;
         private HashUserControl hashUserControl1;
+        private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
     }
 }
 

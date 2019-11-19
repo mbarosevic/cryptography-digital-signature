@@ -32,38 +32,53 @@ namespace CryptographyDigitalSignature
                 }
             }
         }
+
         public RSAParameters publicKey;
         private RSAParameters privateKey;
-        public void GenerateKeys()
+        public string Encrypt(string plainText)
         {
-            using (var rsa = new RSACryptoServiceProvider(2048))
+            UnicodeEncoding Converter = new UnicodeEncoding();
+            byte[] dataToEncrypt = Converter.GetBytes(plainText);
+            byte[] encryptedData;
+            byte[] decryptedData;
+            bool encrypted = false;
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
-                //not storing in key container
                 rsa.PersistKeyInCsp = false;
                 publicKey = rsa.ExportParameters(false);
                 privateKey = rsa.ExportParameters(true);
+                encryptedData = RSAEncrypt(dataToEncrypt, rsa.ExportParameters(false), false);
             }
-        }
-
-        public byte[] EncryptToByteArray(string plainText)
-        {
-            byte[] textToByteArray = Encoding.UTF8.GetBytes(plainText);
-            byte[] encryptedText;
-            using (var rsa = new RSACryptoServiceProvider(2048))
+            if(encryptedData != null)
             {
-                rsa.PersistKeyInCsp = false;
-                rsa.ImportParameters(publicKey);
-                encryptedText = rsa.Encrypt(textToByteArray, true);
+                return Convert.ToBase64String(encryptedData);
             }
-            return encryptedText;
+            else
+            {
+                return null;
+            }
         }
 
-        public string Encrypt(string plainText)
+        public byte[] RSAEncrypt(byte[] DataToEncrypt, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
         {
-            GenerateKeys();
-            string encryptedText = Convert.ToBase64String(EncryptToByteArray(plainText));
-            return encryptedText;
+            try
+            {
+                byte[] encryptedData;
+                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+                {
+                    RSA.ImportParameters(RSAKeyInfo);
+                    encryptedData = RSA.Encrypt(DataToEncrypt, DoOAEPPadding);
+                }
+                return encryptedData;
+            }
+            catch
+            {
+                return null;
+            }
+
         }
+
+
 
         public string DecryptToByteArray(byte[] encryptedText)
         {

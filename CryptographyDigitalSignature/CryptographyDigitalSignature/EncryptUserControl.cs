@@ -26,8 +26,8 @@ namespace CryptographyDigitalSignature
         private MainForm mainForm;
         readonly AesAlgorithm aesAlg = new AesAlgorithm();
         readonly RsaAlgorithm rsaAlg = new RsaAlgorithm();
-
         string plainText = string.Empty;
+        string encryptedText = string.Empty;
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
@@ -43,7 +43,15 @@ namespace CryptographyDigitalSignature
                 }
                 else
                 {
-                    tbxEncryptedText.Text = rsaAlg.Encrypt(plainText);
+                    encryptedText = rsaAlg.Encrypt(plainText);
+                    if(encryptedText != null)
+                    {
+                        tbxEncryptedText.Text = encryptedText;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry, can't encrypt given text.");
+                    }
                 }
             }
         }

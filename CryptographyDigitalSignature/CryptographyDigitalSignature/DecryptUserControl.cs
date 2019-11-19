@@ -57,7 +57,7 @@ namespace CryptographyDigitalSignature
             }
             else
             {
-                tbxDecryptedText.Text = rsaAlgorithm.DecryptToByteArray(encryptedText);
+                tbxDecryptedText.Text = rsaAlgorithm.Decrypt(tbxEncryptedText.Text);
             }
         }
     }

@@ -64,5 +64,29 @@ namespace CryptographyDigitalSignature
             string encryptedText = Convert.ToBase64String(EncryptToByteArray(plainText));
             return encryptedText;
         }
+
+        public string DecryptToByteArray(byte[] encryptedText)
+        {
+            byte[] decryptedText = new byte[] { };
+            try
+            {
+                using (var rsa = new RSACryptoServiceProvider(2048))
+                {
+                    rsa.PersistKeyInCsp = false;
+                    rsa.ImportParameters(privateKey);
+                    decryptedText = rsa.Decrypt(encryptedText, true);
+                    return Encoding.UTF8.GetString(decryptedText);
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public string Decrypt(string encryptedText)
+        {
+            return DecryptToByteArray(Convert.FromBase64String(encryptedText));
+        }
     }
 }

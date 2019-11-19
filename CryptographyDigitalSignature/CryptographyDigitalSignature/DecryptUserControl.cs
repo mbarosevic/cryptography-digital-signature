@@ -22,6 +22,7 @@ namespace CryptographyDigitalSignature
         }
         MainForm mainForm;
         AesAlgorithm aesAlgorithm = new AesAlgorithm();
+        RsaAlgorithm rsaAlgorithm = new RsaAlgorithm();
         string plainText = string.Empty;
         string keyAndIV = string.Empty;
         byte[] encryptedText;
@@ -50,7 +51,14 @@ namespace CryptographyDigitalSignature
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            tbxDecryptedText.Text = aesAlgorithm.DecryptFromByteArray(encryptedText, key, iv);
+            if(cbxDecryptionAlgorithm.SelectedIndex == 0)
+            {
+                tbxDecryptedText.Text = aesAlgorithm.DecryptFromByteArray(encryptedText, key, iv);
+            }
+            else
+            {
+                tbxDecryptedText.Text = rsaAlgorithm.DecryptToByteArray(encryptedText);
+            }
         }
     }
 }

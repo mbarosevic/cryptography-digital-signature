@@ -35,12 +35,13 @@
             this.btnCalculateHash = new MetroSet_UI.Controls.MetroSetButton();
             this.tbxHash = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.btnSaveHashData = new MetroSet_UI.Controls.MetroSetButton();
             this.SuspendLayout();
             // 
             // metroSetLabel3
             // 
             this.metroSetLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel3.Location = new System.Drawing.Point(39, 42);
+            this.metroSetLabel3.Location = new System.Drawing.Point(43, 44);
             this.metroSetLabel3.Name = "metroSetLabel3";
             this.metroSetLabel3.Size = new System.Drawing.Size(325, 28);
             this.metroSetLabel3.Style = MetroSet_UI.Design.Style.Light;
@@ -53,7 +54,7 @@
             // metroSetLabel1
             // 
             this.metroSetLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel1.Location = new System.Drawing.Point(39, 14);
+            this.metroSetLabel1.Location = new System.Drawing.Point(43, 11);
             this.metroSetLabel1.Name = "metroSetLabel1";
             this.metroSetLabel1.Size = new System.Drawing.Size(397, 28);
             this.metroSetLabel1.Style = MetroSet_UI.Design.Style.Light;
@@ -76,12 +77,12 @@
             this.tbxPlainText.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.tbxPlainText.Image = null;
             this.tbxPlainText.Lines = null;
-            this.tbxPlainText.Location = new System.Drawing.Point(39, 73);
+            this.tbxPlainText.Location = new System.Drawing.Point(43, 75);
             this.tbxPlainText.MaxLength = 32767;
-            this.tbxPlainText.Multiline = false;
+            this.tbxPlainText.Multiline = true;
             this.tbxPlainText.Name = "tbxPlainText";
             this.tbxPlainText.ReadOnly = false;
-            this.tbxPlainText.Size = new System.Drawing.Size(636, 146);
+            this.tbxPlainText.Size = new System.Drawing.Size(636, 113);
             this.tbxPlainText.Style = MetroSet_UI.Design.Style.Light;
             this.tbxPlainText.StyleManager = null;
             this.tbxPlainText.TabIndex = 11;
@@ -100,7 +101,7 @@
             this.btnOpenFileDialog.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.HoverColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.HoverTextColor = System.Drawing.Color.White;
-            this.btnOpenFileDialog.Location = new System.Drawing.Point(39, 239);
+            this.btnOpenFileDialog.Location = new System.Drawing.Point(43, 204);
             this.btnOpenFileDialog.Name = "btnOpenFileDialog";
             this.btnOpenFileDialog.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.NormalColor = System.Drawing.Color.Maroon;
@@ -125,7 +126,7 @@
             this.btnCalculateHash.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnCalculateHash.HoverColor = System.Drawing.Color.Maroon;
             this.btnCalculateHash.HoverTextColor = System.Drawing.Color.White;
-            this.btnCalculateHash.Location = new System.Drawing.Point(39, 276);
+            this.btnCalculateHash.Location = new System.Drawing.Point(43, 249);
             this.btnCalculateHash.Name = "btnCalculateHash";
             this.btnCalculateHash.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnCalculateHash.NormalColor = System.Drawing.Color.Maroon;
@@ -155,12 +156,12 @@
             this.tbxHash.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.tbxHash.Image = null;
             this.tbxHash.Lines = null;
-            this.tbxHash.Location = new System.Drawing.Point(39, 341);
+            this.tbxHash.Location = new System.Drawing.Point(43, 312);
             this.tbxHash.MaxLength = 32767;
             this.tbxHash.Multiline = true;
             this.tbxHash.Name = "tbxHash";
             this.tbxHash.ReadOnly = true;
-            this.tbxHash.Size = new System.Drawing.Size(636, 142);
+            this.tbxHash.Size = new System.Drawing.Size(636, 113);
             this.tbxHash.Style = MetroSet_UI.Design.Style.Light;
             this.tbxHash.StyleManager = null;
             this.tbxHash.TabIndex = 16;
@@ -173,9 +174,9 @@
             // metroSetLabel2
             // 
             this.metroSetLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel2.Location = new System.Drawing.Point(39, 310);
+            this.metroSetLabel2.Location = new System.Drawing.Point(43, 291);
             this.metroSetLabel2.Name = "metroSetLabel2";
-            this.metroSetLabel2.Size = new System.Drawing.Size(397, 28);
+            this.metroSetLabel2.Size = new System.Drawing.Size(397, 18);
             this.metroSetLabel2.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel2.StyleManager = null;
             this.metroSetLabel2.TabIndex = 17;
@@ -183,11 +184,38 @@
             this.metroSetLabel2.ThemeAuthor = "Narwin";
             this.metroSetLabel2.ThemeName = "MetroLite";
             // 
+            // btnSaveHashData
+            // 
+            this.btnSaveHashData.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSaveHashData.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSaveHashData.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnSaveHashData.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveHashData.HoverBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveHashData.HoverColor = System.Drawing.Color.Maroon;
+            this.btnSaveHashData.HoverTextColor = System.Drawing.Color.White;
+            this.btnSaveHashData.Location = new System.Drawing.Point(43, 444);
+            this.btnSaveHashData.Name = "btnSaveHashData";
+            this.btnSaveHashData.NormalBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveHashData.NormalColor = System.Drawing.Color.Maroon;
+            this.btnSaveHashData.NormalTextColor = System.Drawing.Color.White;
+            this.btnSaveHashData.PressBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveHashData.PressColor = System.Drawing.Color.Maroon;
+            this.btnSaveHashData.PressTextColor = System.Drawing.Color.White;
+            this.btnSaveHashData.Size = new System.Drawing.Size(155, 31);
+            this.btnSaveHashData.Style = MetroSet_UI.Design.Style.Custom;
+            this.btnSaveHashData.StyleManager = null;
+            this.btnSaveHashData.TabIndex = 18;
+            this.btnSaveHashData.Text = "Save Hash";
+            this.btnSaveHashData.ThemeAuthor = "Narwin";
+            this.btnSaveHashData.ThemeName = "MetroLite";
+            this.btnSaveHashData.Click += new System.EventHandler(this.btnSaveHashData_Click);
+            // 
             // HashUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnSaveHashData);
             this.Controls.Add(this.metroSetLabel2);
             this.Controls.Add(this.tbxHash);
             this.Controls.Add(this.btnCalculateHash);
@@ -210,5 +238,6 @@
         private MetroSet_UI.Controls.MetroSetButton btnCalculateHash;
         private MetroSet_UI.Controls.MetroSetTextBox tbxHash;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
+        private MetroSet_UI.Controls.MetroSetButton btnSaveHashData;
     }
 }

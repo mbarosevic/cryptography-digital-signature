@@ -27,7 +27,8 @@ namespace CryptographyDigitalSignature
         readonly AesAlgorithm aesAlg = new AesAlgorithm();
         readonly RsaAlgorithm rsaAlg = new RsaAlgorithm();
         string plainText = string.Empty;
-        string encryptedText = string.Empty;
+        public byte[] encryptedText;
+
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
@@ -43,10 +44,13 @@ namespace CryptographyDigitalSignature
                 }
                 else
                 {
-                    encryptedText = rsaAlg.Encrypt(plainText);
+                    byte[] plainTextToEncrypt;
+                    plainTextToEncrypt = rsaAlg.ByteConverter.GetBytes(tbxPlainText.Text);
+                    encryptedText = rsaAlg.Encryption(plainTextToEncrypt, rsaAlg.RSA.ExportParameters(false), false);
                     if(encryptedText != null)
                     {
-                        tbxEncryptedText.Text = encryptedText;
+                        //tbxEncryptedText.Text = rsaAlg.ByteConverter.GetString(encryptedText);
+                        tbxEncryptedText.Text = Convert.ToBase64String(encryptedText);
                     }
                     else
                     {
@@ -54,6 +58,14 @@ namespace CryptographyDigitalSignature
                     }
                 }
             }
+        }
+
+        public string Decrypt()
+        {
+            byte[] decryptedtex = rsaAlg.Decryption(encryptedText,
+            rsaAlg.RSA.ExportParameters(true), false);
+            string s = rsaAlg.ByteConverter.GetString(decryptedtex);
+            return s;
         }
         private string key = string.Empty;
         private string iv = string.Empty;
@@ -74,7 +86,6 @@ namespace CryptographyDigitalSignature
             {
                 lblEncryptionStatus.Text = "Encryption failed";
             }
-            
         }
 
         private void btnOpenFileDialog_Click(object sender, EventArgs e)

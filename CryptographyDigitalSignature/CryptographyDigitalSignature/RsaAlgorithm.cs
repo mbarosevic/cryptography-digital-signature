@@ -33,75 +33,51 @@ namespace CryptographyDigitalSignature
             }
         }
 
-        public RSAParameters publicKey;
-        private RSAParameters privateKey;
-        public string Encrypt(string plainText)
-        {
-            UnicodeEncoding Converter = new UnicodeEncoding();
-            byte[] dataToEncrypt = Converter.GetBytes(plainText);
-            byte[] encryptedData;
-            byte[] decryptedData;
-            bool encrypted = false;
-            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
-            {
-                rsa.PersistKeyInCsp = false;
-                publicKey = rsa.ExportParameters(false);
-                privateKey = rsa.ExportParameters(true);
-                encryptedData = RSAEncrypt(dataToEncrypt, rsa.ExportParameters(false), false);
-            }
-            if(encryptedData != null)
-            {
-                return Convert.ToBase64String(encryptedData);
-            }
-            else
-            {
-                return null;
-            }
-        }
 
-        public byte[] RSAEncrypt(byte[] DataToEncrypt, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
+        public UnicodeEncoding ByteConverter = new UnicodeEncoding();
+        public RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
+        byte[] plaintext;
+        byte[] encryptedtext;
+
+
+        public byte[] Encryption(byte[] Data, RSAParameters RSAKey, bool DoOAEPPadding)
         {
             try
             {
                 byte[] encryptedData;
                 using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
-                    RSA.ImportParameters(RSAKeyInfo);
-                    encryptedData = RSA.Encrypt(DataToEncrypt, DoOAEPPadding);
+                    RSA.ImportParameters(RSAKey);
+                    encryptedData = RSA.Encrypt(Data, DoOAEPPadding);
                 }
                 return encryptedData;
             }
-            catch
+            catch (CryptographicException e)
             {
+                Console.WriteLine(e.Message);
                 return null;
             }
-
         }
 
 
-
-        public string DecryptToByteArray(byte[] encryptedText)
+        public byte[] Decryption(byte[] Data, RSAParameters RSAKey, bool DoOAEPPadding)
         {
-            byte[] decryptedText = new byte[] { };
             try
             {
-                using (var rsa = new RSACryptoServiceProvider(2048))
+                byte[] decryptedData;
+                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
-                    rsa.PersistKeyInCsp = false;
-                    rsa.ImportParameters(privateKey);
-                    decryptedText = rsa.Decrypt(encryptedText, true);
-                    return Encoding.UTF8.GetString(decryptedText);
+                    RSA.ImportParameters(RSAKey);
+                    decryptedData = RSA.Decrypt(Data, DoOAEPPadding);
                 }
+                return decryptedData;
             }
-            catch
+            catch (CryptographicException e)
             {
+                Console.WriteLine(e.ToString());
                 return null;
             }
         }
 
-        public string Decrypt(string encryptedText)
-        {
-            return DecryptToByteArray(Convert.FromBase64String(encryptedText));
-        }
     }
 }

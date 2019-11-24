@@ -18,13 +18,21 @@ namespace CryptographyDigitalSignature
         }
 
         readonly Sha sha = new Sha();
+        public MainForm MainForm { get => MainForm; set => MainForm = value; }
+
         private void btnCalculateHash_Click(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
-            if(plainText != string.Empty)
+            if(!string.IsNullOrEmpty(plainText))
             {
                 tbxHash.Text = sha.HashCalculate(plainText);
             }
+        }
+
+        private void btnSaveHashData_Click(object sender, EventArgs e)
+        {
+            MainForm = new MainForm();
+            MainForm.SaveFileDialog(tbxHash.Text);
         }
     }
 }

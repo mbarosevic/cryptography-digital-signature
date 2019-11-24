@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
-using System.IO;
 
 namespace CryptographyDigitalSignature
 {
@@ -23,16 +15,15 @@ namespace CryptographyDigitalSignature
             cbxEncryptionAlgorithm.SelectedIndex = 0;
         }
 
-        private MainForm mainForm;
         readonly AesAlgorithm aesAlg = new AesAlgorithm();
         readonly RsaAlgorithm rsaAlg = new RsaAlgorithm();
         string plainText = string.Empty;
-        public byte[] encryptedText;
+        private byte[] encryptedText;
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
-            if(plainText == string.Empty)
+            if(string.IsNullOrEmpty(plainText))
             {
                 MessageBox.Show("Please choose text file or input text!");
             }
@@ -69,6 +60,9 @@ namespace CryptographyDigitalSignature
         }
         private string key = string.Empty;
         private string iv = string.Empty;
+
+        public MainForm MainForm { get => MainForm; set => MainForm = value; }
+
         public void EncryptAes(string plainText)
         {
             try
@@ -92,21 +86,21 @@ namespace CryptographyDigitalSignature
         {
             tbxPlainText.Text = string.Empty;
             tbxEncryptedText.Text = string.Empty;
-            mainForm = new MainForm();
-            plainText = mainForm.OpenFileDialog();
-            if(mainForm.path != string.Empty)
+            MainForm = new MainForm();
+            plainText = MainForm.OpenFileDialog();
+            if(!string.IsNullOrEmpty(MainForm.path))
             {
-                lblChosenFile.Text = "Path: " + mainForm.path;
+                lblChosenFile.Text = "Path: " + MainForm.path;
             }
             tbxPlainText.Text = plainText;
         }
 
         private void btnSaveSecretKey_Click(object sender, EventArgs e)
         {
-            mainForm = new MainForm();
+            MainForm = new MainForm();
             if(key != null && iv != null)
             {
-                mainForm.SaveFileDialog(key, iv);
+                MainForm.SaveFileDialog(key, iv);
             }
             else
             {
@@ -117,10 +111,10 @@ namespace CryptographyDigitalSignature
         private void btnSaveEncryptedText_Click(object sender, EventArgs e)
         {
             string encryptedText = tbxEncryptedText.Text;
-            mainForm = new MainForm();
-            if(encryptedText != string.Empty)
+            MainForm = new MainForm();
+            if(!string.IsNullOrEmpty(encryptedText))
             {
-                mainForm.SaveFileDialog(tbxEncryptedText.Text);
+                MainForm.SaveFileDialog(tbxEncryptedText.Text);
             }
             else
             {

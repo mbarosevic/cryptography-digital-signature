@@ -20,25 +20,27 @@ namespace CryptographyDigitalSignature
             cbxDecryptionAlgorithm.Items.Add("RSA");
             cbxDecryptionAlgorithm.SelectedIndex = 0;
         }
-        MainForm mainForm;
-        AesAlgorithm aesAlgorithm = new AesAlgorithm();
-        RsaAlgorithm rsaAlgorithm = new RsaAlgorithm();
+
+        readonly AesAlgorithm aesAlgorithm = new AesAlgorithm();
+        readonly RsaAlgorithm rsaAlgorithm = new RsaAlgorithm();
         string plainText = string.Empty;
         string keyAndIV = string.Empty;
         byte[] encryptedText;
         byte[] key;
         byte[] iv;
+
+        public MainForm MainForm { get => MainForm; set => MainForm = value; }
         private void btnOpenFileDialog_Click(object sender, EventArgs e)
         {
-            mainForm = new MainForm();
-            plainText = mainForm.OpenFileDialog();
+            MainForm = new MainForm();
+            plainText = MainForm.OpenFileDialog();
             tbxEncryptedText.Text = plainText;
         }
 
         private void btnChooseKey_Click(object sender, EventArgs e)
         {
-            mainForm = new MainForm();
-            keyAndIV = mainForm.OpenFileDialog();
+            MainForm = new MainForm();
+            keyAndIV = MainForm.OpenFileDialog();
             string[] lines = keyAndIV.Split(
                         new[] { Environment.NewLine },
                         StringSplitOptions.None
@@ -64,8 +66,8 @@ namespace CryptographyDigitalSignature
 
         private void btnSaveDecryptedText_Click(object sender, EventArgs e)
         {
-            mainForm = new MainForm();
-            mainForm.SaveFileDialog(tbxDecryptedText.Text);
+            MainForm = new MainForm();
+            MainForm.SaveFileDialog(tbxDecryptedText.Text);
         }
     }
 }

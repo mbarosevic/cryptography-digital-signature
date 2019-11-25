@@ -1,5 +1,4 @@
 # Encryption, Decryption and Digital Signature check Application
-
 ## Cryptography
 Cryptography is technique of securing information and communications through use of codes so that only those person for whom the information is intended can understand it and process it. Thus preventing unauthorized access to information. The prefix “crypt” means “hidden” and suffix graphy means “writing”.
 

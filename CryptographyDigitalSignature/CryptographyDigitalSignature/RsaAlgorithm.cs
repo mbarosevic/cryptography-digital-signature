@@ -33,50 +33,64 @@ namespace CryptographyDigitalSignature
             }
         }
 
+        public static RSAParameters javniKljuc;
+        private static RSAParameters privatniKljuc;
 
-        public UnicodeEncoding ByteConverter = new UnicodeEncoding();
-        public RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
-        byte[] plaintext;
-        byte[] encryptedtext;
-
-
-        public byte[] Encryption(byte[] Data, RSAParameters RSAKey, bool DoOAEPPadding)
+        public void GenerirajKljuceve()
         {
-            try
+            using (var rsa = new RSACryptoServiceProvider(2048))
             {
-                byte[] encryptedData;
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
-                {
-                    RSA.ImportParameters(RSAKey);
-                    encryptedData = RSA.Encrypt(Data, DoOAEPPadding);
-                }
-                return encryptedData;
-            }
-            catch (CryptographicException e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
+                //not storing in key container
+                rsa.PersistKeyInCsp = false;
+                javniKljuc = rsa.ExportParameters(false);
+                privatniKljuc = rsa.ExportParameters(true);
             }
         }
 
-
-        public byte[] Decryption(byte[] Data, RSAParameters RSAKey, bool DoOAEPPadding)
+        public byte[] EncryptToByteArray(string text)
         {
+            byte[] textToByteArray = Encoding.UTF8.GetBytes(text);
+            byte[] encryptedText;
+            using (var rsa = new RSACryptoServiceProvider(2048))
+            {
+                rsa.PersistKeyInCsp = false;
+                rsa.ImportParameters(javniKljuc);
+                encryptedText = rsa.Encrypt(textToByteArray, true);
+            }
+            return encryptedText;
+        }
+
+        public string Encrypt(string plainText)
+        {
+            GenerirajKljuceve();
+            string encryptedText = Convert.ToBase64String(EncryptToByteArray(plainText));
+            return encryptedText;
+        }
+
+
+        public string DecryptToByteArray(byte[] encryptedText)
+        {
+            byte[] decryptedText = Array.Empty<byte>();
             try
             {
-                byte[] decryptedData;
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+                using (var rsa = new RSACryptoServiceProvider(2048))
                 {
-                    RSA.ImportParameters(RSAKey);
-                    decryptedData = RSA.Decrypt(Data, DoOAEPPadding);
+                    rsa.PersistKeyInCsp = false;
+                    rsa.ImportParameters(privatniKljuc);
+                    decryptedText = rsa.Decrypt(encryptedText, true);
+                    return Encoding.UTF8.GetString(decryptedText);
                 }
-                return decryptedData;
             }
-            catch (CryptographicException e)
+            catch
             {
-                Console.WriteLine(e.ToString());
                 return null;
             }
+
+        }
+
+        public string Decrypt(string encryptedText)
+        {
+            return DecryptToByteArray(Convert.FromBase64String(encryptedText));
         }
 
     }

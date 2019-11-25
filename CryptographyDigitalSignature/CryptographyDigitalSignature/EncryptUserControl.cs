@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace CryptographyDigitalSignature
 {
@@ -18,9 +19,8 @@ namespace CryptographyDigitalSignature
         readonly AesAlgorithm aesAlg = new AesAlgorithm();
         readonly RsaAlgorithm rsaAlg = new RsaAlgorithm();
         string plainText = string.Empty;
-        private byte[] encryptedText;
 
-        private void btnEncrypt_Click(object sender, EventArgs e)
+    private void btnEncrypt_Click(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
             if(string.IsNullOrEmpty(plainText))
@@ -35,29 +35,11 @@ namespace CryptographyDigitalSignature
                 }
                 else
                 {
-                    byte[] plainTextToEncrypt;
-                    plainTextToEncrypt = rsaAlg.ByteConverter.GetBytes(tbxPlainText.Text);
-                    encryptedText = rsaAlg.Encryption(plainTextToEncrypt, rsaAlg.RSA.ExportParameters(false), false);
-                    if(encryptedText != null)
-                    {
-                        //tbxEncryptedText.Text = rsaAlg.ByteConverter.GetString(encryptedText);
-                        tbxEncryptedText.Text = Convert.ToBase64String(encryptedText);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sorry, can't encrypt given text.");
-                    }
+                    tbxEncryptedText.Text = rsaAlg.Encrypt(tbxPlainText.Text);
                 }
             }
         }
 
-        public string Decrypt()
-        {
-            byte[] decryptedtex = rsaAlg.Decryption(encryptedText,
-            rsaAlg.RSA.ExportParameters(true), false);
-            string s = rsaAlg.ByteConverter.GetString(decryptedtex);
-            return s;
-        }
         private string key = string.Empty;
         private string iv = string.Empty;
 

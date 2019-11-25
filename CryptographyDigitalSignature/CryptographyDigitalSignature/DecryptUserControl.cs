@@ -50,7 +50,7 @@ namespace CryptographyDigitalSignature
             key = Convert.FromBase64String(lines[0]);
             iv = Convert.FromBase64String(lines[1]);
         }
-
+        UnicodeEncoding ByteConverter = new UnicodeEncoding();
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
             if(cbxDecryptionAlgorithm.SelectedIndex == 0)
@@ -59,8 +59,7 @@ namespace CryptographyDigitalSignature
             }
             else
             {
-                EncryptUserControl encrypt = new EncryptUserControl();
-                tbxDecryptedText.Text = encrypt.Decrypt();
+                tbxDecryptedText.Text = rsaAlgorithm.Decrypt(tbxEncryptedText.Text);
             }
         }
 

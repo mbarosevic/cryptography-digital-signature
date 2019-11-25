@@ -106,7 +106,7 @@
             this.btnOpenFileDialog.Text = "Choose File";
             this.btnOpenFileDialog.ThemeAuthor = "Narwin";
             this.btnOpenFileDialog.ThemeName = "MetroLite";
-            this.btnOpenFileDialog.Click += new System.EventHandler(this.btnOpenFileDialog_Click);
+            this.btnOpenFileDialog.Click += new System.EventHandler(this.ChooseFileButtonClick);
             // 
             // metroSetLabel2
             // 
@@ -145,7 +145,7 @@
             this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.ThemeAuthor = "Narwin";
             this.btnEncrypt.ThemeName = "MetroLite";
-            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
+            this.btnEncrypt.Click += new System.EventHandler(this.EncryptButtonClick);
             // 
             // tbxEncryptedText
             // 
@@ -240,7 +240,7 @@
             this.btnSaveSecretKeyAndIv.Text = "Save Key and IV";
             this.btnSaveSecretKeyAndIv.ThemeAuthor = "Narwin";
             this.btnSaveSecretKeyAndIv.ThemeName = "MetroLite";
-            this.btnSaveSecretKeyAndIv.Click += new System.EventHandler(this.btnSaveSecretKey_Click);
+            this.btnSaveSecretKeyAndIv.Click += new System.EventHandler(this.SaveSecretKeyButtonClick);
             // 
             // btnSaveEncryptedText
             // 
@@ -266,7 +266,7 @@
             this.btnSaveEncryptedText.Text = "Save encrypted text";
             this.btnSaveEncryptedText.ThemeAuthor = "Narwin";
             this.btnSaveEncryptedText.ThemeName = "MetroLite";
-            this.btnSaveEncryptedText.Click += new System.EventHandler(this.btnSaveEncryptedText_Click);
+            this.btnSaveEncryptedText.Click += new System.EventHandler(this.SaveEncryptedTextButtonClick);
             // 
             // lblChosenFile
             // 

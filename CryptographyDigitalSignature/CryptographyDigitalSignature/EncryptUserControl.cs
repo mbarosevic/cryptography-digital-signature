@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Security.Cryptography;
-using System.Text;
-
+using System.Resources;
+using System.Reflection;
+using System.Globalization;
 namespace CryptographyDigitalSignature
 {
     public partial class EncryptUserControl : UserControl
@@ -20,7 +21,7 @@ namespace CryptographyDigitalSignature
         readonly RsaAlgorithm rsaAlg = new RsaAlgorithm();
         string plainText = string.Empty;
 
-    private void btnEncrypt_Click(object sender, EventArgs e)
+    private void EncryptButtonClick(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
             if(string.IsNullOrEmpty(plainText))
@@ -64,7 +65,7 @@ namespace CryptographyDigitalSignature
             }
         }
 
-        private void btnOpenFileDialog_Click(object sender, EventArgs e)
+        private void ChooseFileButtonClick(object sender, EventArgs e)
         {
             tbxPlainText.Text = string.Empty;
             tbxEncryptedText.Text = string.Empty;
@@ -77,7 +78,7 @@ namespace CryptographyDigitalSignature
             tbxPlainText.Text = plainText;
         }
 
-        private void btnSaveSecretKey_Click(object sender, EventArgs e)
+        private void SaveSecretKeyButtonClick(object sender, EventArgs e)
         {
             MainForm = new MainForm();
             if(key != null && iv != null)
@@ -90,7 +91,7 @@ namespace CryptographyDigitalSignature
             }
         }
 
-        private void btnSaveEncryptedText_Click(object sender, EventArgs e)
+        private void SaveEncryptedTextButtonClick(object sender, EventArgs e)
         {
             string encryptedText = tbxEncryptedText.Text;
             MainForm = new MainForm();

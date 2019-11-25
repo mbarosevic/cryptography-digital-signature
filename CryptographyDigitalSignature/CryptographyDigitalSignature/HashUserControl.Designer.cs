@@ -141,7 +141,7 @@
             this.btnCalculateHash.Text = "Hash";
             this.btnCalculateHash.ThemeAuthor = "Narwin";
             this.btnCalculateHash.ThemeName = "MetroLite";
-            this.btnCalculateHash.Click += new System.EventHandler(this.btnCalculateHash_Click);
+            this.btnCalculateHash.Click += new System.EventHandler(this.CalculateHashButtonClick);
             // 
             // tbxHash
             // 
@@ -208,7 +208,7 @@
             this.btnSaveHashData.Text = "Save Hash";
             this.btnSaveHashData.ThemeAuthor = "Narwin";
             this.btnSaveHashData.ThemeName = "MetroLite";
-            this.btnSaveHashData.Click += new System.EventHandler(this.btnSaveHashData_Click);
+            this.btnSaveHashData.Click += new System.EventHandler(this.SaveHashDataButtonClick);
             // 
             // HashUserControl
             // 

@@ -30,14 +30,14 @@ namespace CryptographyDigitalSignature
         byte[] iv;
 
         public MainForm MainForm { get => MainForm; set => MainForm = value; }
-        private void btnOpenFileDialog_Click(object sender, EventArgs e)
+        private void ChooseFileButtonClick(object sender, EventArgs e)
         {
             MainForm = new MainForm();
             plainText = MainForm.OpenFileDialog();
             tbxEncryptedText.Text = plainText;
         }
 
-        private void btnChooseKey_Click(object sender, EventArgs e)
+        private void ChooseKeyAndIvButtonClick(object sender, EventArgs e)
         {
             MainForm = new MainForm();
             keyAndIV = MainForm.OpenFileDialog();
@@ -50,8 +50,7 @@ namespace CryptographyDigitalSignature
             key = Convert.FromBase64String(lines[0]);
             iv = Convert.FromBase64String(lines[1]);
         }
-        UnicodeEncoding ByteConverter = new UnicodeEncoding();
-        private void btnDecrypt_Click(object sender, EventArgs e)
+        private void DecryptButtonClick(object sender, EventArgs e)
         {
             if(cbxDecryptionAlgorithm.SelectedIndex == 0)
             {
@@ -63,7 +62,7 @@ namespace CryptographyDigitalSignature
             }
         }
 
-        private void btnSaveDecryptedText_Click(object sender, EventArgs e)
+        private void SaveDecryptedTextButtonClick(object sender, EventArgs e)
         {
             MainForm = new MainForm();
             MainForm.SaveFileDialog(tbxDecryptedText.Text);

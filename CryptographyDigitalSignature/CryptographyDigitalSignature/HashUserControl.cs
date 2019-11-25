@@ -20,7 +20,7 @@ namespace CryptographyDigitalSignature
         readonly Sha sha = new Sha();
         public MainForm MainForm { get => MainForm; set => MainForm = value; }
 
-        private void btnCalculateHash_Click(object sender, EventArgs e)
+        private void CalculateHashButtonClick(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
             if(!string.IsNullOrEmpty(plainText))
@@ -29,7 +29,7 @@ namespace CryptographyDigitalSignature
             }
         }
 
-        private void btnSaveHashData_Click(object sender, EventArgs e)
+        private void SaveHashDataButtonClick(object sender, EventArgs e)
         {
             MainForm = new MainForm();
             MainForm.SaveFileDialog(tbxHash.Text);

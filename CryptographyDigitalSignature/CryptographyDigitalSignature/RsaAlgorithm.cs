@@ -70,14 +70,14 @@ namespace CryptographyDigitalSignature
 
         public string DecryptToByteArray(byte[] encryptedText)
         {
-            byte[] decryptedText = Array.Empty<byte>();
+            //byte[] decryptedText = Array.Empty<byte>();
             try
             {
                 using (var rsa = new RSACryptoServiceProvider(2048))
                 {
                     rsa.PersistKeyInCsp = false;
                     rsa.ImportParameters(privatniKljuc);
-                    decryptedText = rsa.Decrypt(encryptedText, true);
+                    byte[] decryptedText = rsa.Decrypt(encryptedText, true);
                     return Encoding.UTF8.GetString(decryptedText);
                 }
             }

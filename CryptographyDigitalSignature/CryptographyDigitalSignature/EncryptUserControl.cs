@@ -56,6 +56,7 @@ namespace CryptographyDigitalSignature
                     tbxEncryptedText.Text = Convert.ToBase64String(encrypted);
                     key = Convert.ToBase64String(aes.Key);
                     iv = Convert.ToBase64String(aes.IV);
+
                     lblEncryptionStatus.Text = "Text encrypted successfully!";
                 }
             }

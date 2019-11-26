@@ -45,7 +45,7 @@
             this.btnCheck.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnCheck.HoverColor = System.Drawing.Color.Maroon;
             this.btnCheck.HoverTextColor = System.Drawing.Color.White;
-            this.btnCheck.Location = new System.Drawing.Point(35, 365);
+            this.btnCheck.Location = new System.Drawing.Point(43, 370);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnCheck.NormalColor = System.Drawing.Color.Maroon;
@@ -70,7 +70,7 @@
             this.btnChooseFile.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnChooseFile.HoverColor = System.Drawing.Color.Maroon;
             this.btnChooseFile.HoverTextColor = System.Drawing.Color.White;
-            this.btnChooseFile.Location = new System.Drawing.Point(35, 253);
+            this.btnChooseFile.Location = new System.Drawing.Point(43, 258);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnChooseFile.NormalColor = System.Drawing.Color.Maroon;
@@ -95,7 +95,7 @@
             this.btnChooseDigitalSignature.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnChooseDigitalSignature.HoverColor = System.Drawing.Color.Maroon;
             this.btnChooseDigitalSignature.HoverTextColor = System.Drawing.Color.White;
-            this.btnChooseDigitalSignature.Location = new System.Drawing.Point(35, 290);
+            this.btnChooseDigitalSignature.Location = new System.Drawing.Point(43, 295);
             this.btnChooseDigitalSignature.Name = "btnChooseDigitalSignature";
             this.btnChooseDigitalSignature.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnChooseDigitalSignature.NormalColor = System.Drawing.Color.Maroon;
@@ -124,7 +124,7 @@
             this.tbxPlainTekst.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.tbxPlainTekst.Image = null;
             this.tbxPlainTekst.Lines = null;
-            this.tbxPlainTekst.Location = new System.Drawing.Point(35, 77);
+            this.tbxPlainTekst.Location = new System.Drawing.Point(43, 70);
             this.tbxPlainTekst.MaxLength = 32767;
             this.tbxPlainTekst.Multiline = false;
             this.tbxPlainTekst.Name = "tbxPlainTekst";
@@ -142,7 +142,7 @@
             // metroSetLabel3
             // 
             this.metroSetLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel3.Location = new System.Drawing.Point(43, 34);
+            this.metroSetLabel3.Location = new System.Drawing.Point(43, 39);
             this.metroSetLabel3.Name = "metroSetLabel3";
             this.metroSetLabel3.Size = new System.Drawing.Size(365, 28);
             this.metroSetLabel3.Style = MetroSet_UI.Design.Style.Light;

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Security.Cryptography;
-using System.Resources;
-using System.Reflection;
-using System.Globalization;
+using System.Windows.Forms;
 namespace CryptographyDigitalSignature
 {
     public partial class EncryptUserControl : UserControl
@@ -48,6 +45,8 @@ namespace CryptographyDigitalSignature
         private string key = string.Empty;
         private string iv = string.Empty;
 
+        public static RSAParameters javniKljuc;
+        private static RSAParameters privatniKljuc;
         public void EncryptAes(string plainText)
         {
             try
@@ -84,14 +83,23 @@ namespace CryptographyDigitalSignature
         private void SaveSecretKeyButtonClick(object sender, EventArgs e)
         {
             MainForm = new MainForm();
-            if(key != null && iv != null)
+            if(cbxEncryptionAlgorithm.SelectedIndex == 0)
             {
-                MainForm.SaveFileDialog(key, iv);
+                if (key != null && iv != null)
+                {
+                    MainForm.SaveFileDialog(key, iv);
+                }
+                else
+                {
+                    MessageBox.Show("Text is not encrypted successfully. Try again!", "Error");
+                }
             }
             else
             {
-                MessageBox.Show("Text is not encrypted successfully. Try again!", "Error");
+                string publicAndPrivateKey = rsaAlg.GetPublicAndPrivateKey();
+                MainForm.SaveFileDialog(publicAndPrivateKey);
             }
+            
         }
 
         private void SaveEncryptedTextButtonClick(object sender, EventArgs e)

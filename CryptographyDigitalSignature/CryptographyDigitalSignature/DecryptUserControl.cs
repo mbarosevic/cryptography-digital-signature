@@ -29,6 +29,8 @@ namespace CryptographyDigitalSignature
         byte[] key;
         byte[] iv;
 
+        public string publicAndPrivateKeyXML;
+
         public MainForm MainForm;
         private void ChooseFileButtonClick(object sender, EventArgs e)
         {
@@ -40,15 +42,23 @@ namespace CryptographyDigitalSignature
         private void ChooseKeyAndIvButtonClick(object sender, EventArgs e)
         {
             MainForm = new MainForm();
-            keyAndIV = MainForm.OpenFileDialog();
-            string[] lines = keyAndIV.Split(
-                        new[] { Environment.NewLine },
-                        StringSplitOptions.None
-                        );
+            if(cbxDecryptionAlgorithm.SelectedIndex == 0)
+            {
+                keyAndIV = MainForm.OpenFileDialog();
+                string[] lines = keyAndIV.Split(
+                            new[] { Environment.NewLine },
+                            StringSplitOptions.None
+                            );
 
-            encryptedText = Convert.FromBase64String(tbxEncryptedText.Text);
-            key = Convert.FromBase64String(lines[0]);
-            iv = Convert.FromBase64String(lines[1]);
+                encryptedText = Convert.FromBase64String(tbxEncryptedText.Text);
+                key = Convert.FromBase64String(lines[0]);
+                iv = Convert.FromBase64String(lines[1]);
+            }
+            else
+            {
+                publicAndPrivateKeyXML = MainForm.OpenFileDialog();
+            }
+            
         }
         private void DecryptButtonClick(object sender, EventArgs e)
         {

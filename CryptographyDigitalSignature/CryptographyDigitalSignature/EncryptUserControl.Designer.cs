@@ -237,7 +237,7 @@
             this.btnSaveSecretKeyAndIv.Style = MetroSet_UI.Design.Style.Custom;
             this.btnSaveSecretKeyAndIv.StyleManager = null;
             this.btnSaveSecretKeyAndIv.TabIndex = 16;
-            this.btnSaveSecretKeyAndIv.Text = "Save Key and IV";
+            this.btnSaveSecretKeyAndIv.Text = "Save Keys";
             this.btnSaveSecretKeyAndIv.ThemeAuthor = "Narwin";
             this.btnSaveSecretKeyAndIv.ThemeName = "MetroLite";
             this.btnSaveSecretKeyAndIv.Click += new System.EventHandler(this.SaveSecretKeyButtonClick);

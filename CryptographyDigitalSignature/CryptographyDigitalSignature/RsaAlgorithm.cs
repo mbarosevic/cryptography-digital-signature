@@ -36,6 +36,7 @@ namespace CryptographyDigitalSignature
         public static RSAParameters javniKljuc;
         private static RSAParameters privatniKljuc;
 
+        public string publicAndPrivateKey;
         public void GenerirajKljuceve()
         {
             using (var rsa = new RSACryptoServiceProvider(2048))
@@ -44,6 +45,8 @@ namespace CryptographyDigitalSignature
                 rsa.PersistKeyInCsp = false;
                 javniKljuc = rsa.ExportParameters(false);
                 privatniKljuc = rsa.ExportParameters(true);
+
+                publicAndPrivateKey = rsa.ToXmlString(true);
             }
         }
 
@@ -91,6 +94,11 @@ namespace CryptographyDigitalSignature
         public string Decrypt(string encryptedText)
         {
             return DecryptToByteArray(Convert.FromBase64String(encryptedText));
+        }
+
+        public string GetPublicAndPrivateKey()
+        {
+            return publicAndPrivateKey;
         }
 
     }

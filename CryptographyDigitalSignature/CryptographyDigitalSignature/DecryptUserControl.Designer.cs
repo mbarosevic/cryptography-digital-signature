@@ -235,7 +235,7 @@
             this.btnChooseKey.Style = MetroSet_UI.Design.Style.Custom;
             this.btnChooseKey.StyleManager = null;
             this.btnChooseKey.TabIndex = 24;
-            this.btnChooseKey.Text = "Choose Key and IV";
+            this.btnChooseKey.Text = "Choose Keys";
             this.btnChooseKey.ThemeAuthor = "Narwin";
             this.btnChooseKey.ThemeName = "MetroLite";
             this.btnChooseKey.Click += new System.EventHandler(this.ChooseKeyAndIvButtonClick);

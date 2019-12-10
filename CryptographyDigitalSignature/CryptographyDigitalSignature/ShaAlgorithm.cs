@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 namespace CryptographyDigitalSignature
 {
-    class Sha
+    class ShaAlgorithm : RsaAlgorithm
     {
         //Implementation of thread-safety singleton pattern
-        private static Sha instance = null;
+        private static ShaAlgorithm instance = null;
         private static readonly object padlock = new object();
 
-        public Sha()
+        public ShaAlgorithm()
         {
 
         }
 
-        public static Sha Instance
+        public static ShaAlgorithm Instance
         {
             get
             {
@@ -25,12 +25,16 @@ namespace CryptographyDigitalSignature
                 {
                     if (instance == null)
                     {
-                        instance = new Sha();
+                        instance = new ShaAlgorithm();
                     }
                     return instance;
                 }
             }
         }
+
+        RsaAlgorithm rsaAlg = new RsaAlgorithm();
+        private static RSAParameters publicKeySignature;
+        private static RSAParameters privateKeySignature;
         public string HashCalculate(string plainText)
         {
             StringBuilder builder = new StringBuilder();
@@ -45,5 +49,11 @@ namespace CryptographyDigitalSignature
             }
             return builder.ToString();
         }
+        /*
+        public string GenerateDigitalSignature(string hashText)
+        {
+            string digitalSignature = rsaAlg.Encrypt(hashText);
+        }
+        */
     }
 }

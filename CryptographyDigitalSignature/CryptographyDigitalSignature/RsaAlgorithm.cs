@@ -33,8 +33,8 @@ namespace CryptographyDigitalSignature
             }
         }
 
-        public static RSAParameters javniKljuc;
-        private static RSAParameters privatniKljuc;
+        public static RSAParameters publicKey;
+        private static RSAParameters privateKey;
 
         public string publicAndPrivateKey;
         public void GenerirajKljuceve()
@@ -43,8 +43,8 @@ namespace CryptographyDigitalSignature
             {
                 //not storing in key container
                 rsa.PersistKeyInCsp = false;
-                javniKljuc = rsa.ExportParameters(false);
-                privatniKljuc = rsa.ExportParameters(true);
+                publicKey = rsa.ExportParameters(false);
+                privateKey = rsa.ExportParameters(true);
 
                 publicAndPrivateKey = rsa.ToXmlString(true);
             }
@@ -57,7 +57,7 @@ namespace CryptographyDigitalSignature
             using (var rsa = new RSACryptoServiceProvider(2048))
             {
                 rsa.PersistKeyInCsp = false;
-                rsa.ImportParameters(javniKljuc);
+                rsa.ImportParameters(publicKey);
                 encryptedText = rsa.Encrypt(textToByteArray, true);
             }
             return encryptedText;
@@ -79,7 +79,7 @@ namespace CryptographyDigitalSignature
                 using (var rsa = new RSACryptoServiceProvider(2048))
                 {
                     rsa.PersistKeyInCsp = false;
-                    rsa.ImportParameters(privatniKljuc);
+                    rsa.ImportParameters(privateKey);
                     byte[] decryptedText = rsa.Decrypt(encryptedText, true);
                     return Encoding.UTF8.GetString(decryptedText);
                 }
@@ -94,6 +94,11 @@ namespace CryptographyDigitalSignature
         public string Decrypt(string encryptedText)
         {
             return DecryptToByteArray(Convert.FromBase64String(encryptedText));
+        }
+
+        public RSAParameters GetPrivateKey()
+        {
+            return pri
         }
 
         public string GetPublicAndPrivateKey()

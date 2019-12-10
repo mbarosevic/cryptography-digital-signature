@@ -22,6 +22,7 @@ namespace CryptographyDigitalSignature
 
             decryptUserControl1.Hide();
             hashUserControl1.Hide();
+            
             encryptUserControl1.Show();
         }
 

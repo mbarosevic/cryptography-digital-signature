@@ -19,6 +19,9 @@ namespace CryptographyDigitalSignature
 
         readonly AesAlgorithm aesAlg = new AesAlgorithm();
         readonly RsaAlgorithm rsaAlg = new RsaAlgorithm();
+
+        public MainForm MainForm { get; private set; }
+
         string plainText = string.Empty;
 
     private void EncryptButtonClick(object sender, EventArgs e)
@@ -37,14 +40,13 @@ namespace CryptographyDigitalSignature
                 else
                 {
                     tbxEncryptedText.Text = rsaAlg.Encrypt(tbxPlainText.Text);
+                    lblEncryptionStatus.Text = "Text encrypted successfully!";
                 }
             }
         }
 
         private string key = string.Empty;
         private string iv = string.Empty;
-
-        public MainForm MainForm { get => MainForm; set => MainForm = value; }
 
         public void EncryptAes(string plainText)
         {

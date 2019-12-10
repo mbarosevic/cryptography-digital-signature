@@ -29,7 +29,7 @@ namespace CryptographyDigitalSignature
         byte[] key;
         byte[] iv;
 
-        public MainForm MainForm { get => MainForm; set => MainForm = value; }
+        public MainForm MainForm;
         private void ChooseFileButtonClick(object sender, EventArgs e)
         {
             MainForm = new MainForm();

@@ -17,8 +17,8 @@ namespace CryptographyDigitalSignature
             InitializeComponent();
         }
 
-        readonly Sha sha = new Sha();
-        public MainForm MainForm { get => MainForm; set => MainForm = value; }
+        readonly ShaAlgorithm sha = new ShaAlgorithm();
+        public MainForm mainForm;
 
         private void CalculateHashButtonClick(object sender, EventArgs e)
         {
@@ -27,12 +27,29 @@ namespace CryptographyDigitalSignature
             {
                 tbxHash.Text = sha.HashCalculate(plainText);
             }
+            else
+            {
+                MessageBox.Show("Please choose text file or input text!");
+            }
+        }
+
+        private void btnOpenFileDialog_Click(object sender, EventArgs e)
+        {
+            mainForm = new MainForm();
+            tbxPlainText.Text = mainForm.OpenFileDialog();
         }
 
         private void SaveHashDataButtonClick(object sender, EventArgs e)
         {
-            MainForm = new MainForm();
-            MainForm.SaveFileDialog(tbxHash.Text);
+            mainForm = new MainForm();
+            mainForm.SaveFileDialog(tbxHash.Text);
+        }
+
+        private void btnSaveDigitalSignature_Click(object sender, EventArgs e)
+        {
+            string digitalSignature = sha.GenerateDigitalSignature(tbxHash.Text);
+            mainForm = new MainForm();
+            mainForm.SaveFileDialog(digitalSignature);
         }
     }
 }

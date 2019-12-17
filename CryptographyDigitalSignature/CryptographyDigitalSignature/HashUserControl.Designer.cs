@@ -36,14 +36,16 @@
             this.tbxHash = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.btnSaveHashData = new MetroSet_UI.Controls.MetroSetButton();
+            this.btnSaveDigitalSignature = new MetroSet_UI.Controls.MetroSetButton();
             this.SuspendLayout();
             // 
             // metroSetLabel3
             // 
             this.metroSetLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel3.Location = new System.Drawing.Point(43, 44);
+            this.metroSetLabel3.Location = new System.Drawing.Point(54, 55);
+            this.metroSetLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroSetLabel3.Name = "metroSetLabel3";
-            this.metroSetLabel3.Size = new System.Drawing.Size(325, 28);
+            this.metroSetLabel3.Size = new System.Drawing.Size(406, 35);
             this.metroSetLabel3.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel3.StyleManager = null;
             this.metroSetLabel3.TabIndex = 9;
@@ -54,9 +56,10 @@
             // metroSetLabel1
             // 
             this.metroSetLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel1.Location = new System.Drawing.Point(43, 11);
+            this.metroSetLabel1.Location = new System.Drawing.Point(54, 14);
+            this.metroSetLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroSetLabel1.Name = "metroSetLabel1";
-            this.metroSetLabel1.Size = new System.Drawing.Size(397, 28);
+            this.metroSetLabel1.Size = new System.Drawing.Size(496, 35);
             this.metroSetLabel1.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel1.StyleManager = null;
             this.metroSetLabel1.TabIndex = 10;
@@ -77,12 +80,13 @@
             this.tbxPlainText.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.tbxPlainText.Image = null;
             this.tbxPlainText.Lines = null;
-            this.tbxPlainText.Location = new System.Drawing.Point(43, 75);
+            this.tbxPlainText.Location = new System.Drawing.Point(54, 94);
+            this.tbxPlainText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxPlainText.MaxLength = 32767;
             this.tbxPlainText.Multiline = true;
             this.tbxPlainText.Name = "tbxPlainText";
             this.tbxPlainText.ReadOnly = false;
-            this.tbxPlainText.Size = new System.Drawing.Size(636, 113);
+            this.tbxPlainText.Size = new System.Drawing.Size(795, 141);
             this.tbxPlainText.Style = MetroSet_UI.Design.Style.Light;
             this.tbxPlainText.StyleManager = null;
             this.tbxPlainText.TabIndex = 11;
@@ -101,7 +105,8 @@
             this.btnOpenFileDialog.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.HoverColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.HoverTextColor = System.Drawing.Color.White;
-            this.btnOpenFileDialog.Location = new System.Drawing.Point(43, 204);
+            this.btnOpenFileDialog.Location = new System.Drawing.Point(54, 255);
+            this.btnOpenFileDialog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOpenFileDialog.Name = "btnOpenFileDialog";
             this.btnOpenFileDialog.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.NormalColor = System.Drawing.Color.Maroon;
@@ -109,13 +114,14 @@
             this.btnOpenFileDialog.PressBorderColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.PressColor = System.Drawing.Color.Maroon;
             this.btnOpenFileDialog.PressTextColor = System.Drawing.Color.White;
-            this.btnOpenFileDialog.Size = new System.Drawing.Size(155, 31);
+            this.btnOpenFileDialog.Size = new System.Drawing.Size(194, 39);
             this.btnOpenFileDialog.Style = MetroSet_UI.Design.Style.Custom;
             this.btnOpenFileDialog.StyleManager = null;
             this.btnOpenFileDialog.TabIndex = 14;
             this.btnOpenFileDialog.Text = "Choose File";
             this.btnOpenFileDialog.ThemeAuthor = "Narwin";
             this.btnOpenFileDialog.ThemeName = "MetroLite";
+            this.btnOpenFileDialog.Click += new System.EventHandler(this.btnOpenFileDialog_Click);
             // 
             // btnCalculateHash
             // 
@@ -126,7 +132,8 @@
             this.btnCalculateHash.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnCalculateHash.HoverColor = System.Drawing.Color.Maroon;
             this.btnCalculateHash.HoverTextColor = System.Drawing.Color.White;
-            this.btnCalculateHash.Location = new System.Drawing.Point(43, 249);
+            this.btnCalculateHash.Location = new System.Drawing.Point(54, 311);
+            this.btnCalculateHash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCalculateHash.Name = "btnCalculateHash";
             this.btnCalculateHash.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnCalculateHash.NormalColor = System.Drawing.Color.Maroon;
@@ -134,7 +141,7 @@
             this.btnCalculateHash.PressBorderColor = System.Drawing.Color.Maroon;
             this.btnCalculateHash.PressColor = System.Drawing.Color.Maroon;
             this.btnCalculateHash.PressTextColor = System.Drawing.Color.White;
-            this.btnCalculateHash.Size = new System.Drawing.Size(155, 31);
+            this.btnCalculateHash.Size = new System.Drawing.Size(194, 39);
             this.btnCalculateHash.Style = MetroSet_UI.Design.Style.Custom;
             this.btnCalculateHash.StyleManager = null;
             this.btnCalculateHash.TabIndex = 15;
@@ -156,12 +163,13 @@
             this.tbxHash.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.tbxHash.Image = null;
             this.tbxHash.Lines = null;
-            this.tbxHash.Location = new System.Drawing.Point(43, 312);
+            this.tbxHash.Location = new System.Drawing.Point(54, 390);
+            this.tbxHash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxHash.MaxLength = 32767;
             this.tbxHash.Multiline = true;
             this.tbxHash.Name = "tbxHash";
             this.tbxHash.ReadOnly = true;
-            this.tbxHash.Size = new System.Drawing.Size(636, 113);
+            this.tbxHash.Size = new System.Drawing.Size(795, 141);
             this.tbxHash.Style = MetroSet_UI.Design.Style.Light;
             this.tbxHash.StyleManager = null;
             this.tbxHash.TabIndex = 16;
@@ -174,9 +182,10 @@
             // metroSetLabel2
             // 
             this.metroSetLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel2.Location = new System.Drawing.Point(43, 291);
+            this.metroSetLabel2.Location = new System.Drawing.Point(54, 364);
+            this.metroSetLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroSetLabel2.Name = "metroSetLabel2";
-            this.metroSetLabel2.Size = new System.Drawing.Size(397, 18);
+            this.metroSetLabel2.Size = new System.Drawing.Size(496, 22);
             this.metroSetLabel2.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel2.StyleManager = null;
             this.metroSetLabel2.TabIndex = 17;
@@ -193,7 +202,8 @@
             this.btnSaveHashData.HoverBorderColor = System.Drawing.Color.Maroon;
             this.btnSaveHashData.HoverColor = System.Drawing.Color.Maroon;
             this.btnSaveHashData.HoverTextColor = System.Drawing.Color.White;
-            this.btnSaveHashData.Location = new System.Drawing.Point(43, 444);
+            this.btnSaveHashData.Location = new System.Drawing.Point(54, 555);
+            this.btnSaveHashData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaveHashData.Name = "btnSaveHashData";
             this.btnSaveHashData.NormalBorderColor = System.Drawing.Color.Maroon;
             this.btnSaveHashData.NormalColor = System.Drawing.Color.Maroon;
@@ -201,7 +211,7 @@
             this.btnSaveHashData.PressBorderColor = System.Drawing.Color.Maroon;
             this.btnSaveHashData.PressColor = System.Drawing.Color.Maroon;
             this.btnSaveHashData.PressTextColor = System.Drawing.Color.White;
-            this.btnSaveHashData.Size = new System.Drawing.Size(155, 31);
+            this.btnSaveHashData.Size = new System.Drawing.Size(194, 39);
             this.btnSaveHashData.Style = MetroSet_UI.Design.Style.Custom;
             this.btnSaveHashData.StyleManager = null;
             this.btnSaveHashData.TabIndex = 18;
@@ -210,11 +220,39 @@
             this.btnSaveHashData.ThemeName = "MetroLite";
             this.btnSaveHashData.Click += new System.EventHandler(this.SaveHashDataButtonClick);
             // 
+            // btnSaveDigitalSignature
+            // 
+            this.btnSaveDigitalSignature.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSaveDigitalSignature.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSaveDigitalSignature.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnSaveDigitalSignature.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveDigitalSignature.HoverBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveDigitalSignature.HoverColor = System.Drawing.Color.Maroon;
+            this.btnSaveDigitalSignature.HoverTextColor = System.Drawing.Color.White;
+            this.btnSaveDigitalSignature.Location = new System.Drawing.Point(266, 555);
+            this.btnSaveDigitalSignature.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveDigitalSignature.Name = "btnSaveDigitalSignature";
+            this.btnSaveDigitalSignature.NormalBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveDigitalSignature.NormalColor = System.Drawing.Color.Maroon;
+            this.btnSaveDigitalSignature.NormalTextColor = System.Drawing.Color.White;
+            this.btnSaveDigitalSignature.PressBorderColor = System.Drawing.Color.Maroon;
+            this.btnSaveDigitalSignature.PressColor = System.Drawing.Color.Maroon;
+            this.btnSaveDigitalSignature.PressTextColor = System.Drawing.Color.White;
+            this.btnSaveDigitalSignature.Size = new System.Drawing.Size(194, 39);
+            this.btnSaveDigitalSignature.Style = MetroSet_UI.Design.Style.Custom;
+            this.btnSaveDigitalSignature.StyleManager = null;
+            this.btnSaveDigitalSignature.TabIndex = 19;
+            this.btnSaveDigitalSignature.Text = "Save Digital Signature";
+            this.btnSaveDigitalSignature.ThemeAuthor = "Narwin";
+            this.btnSaveDigitalSignature.ThemeName = "MetroLite";
+            this.btnSaveDigitalSignature.Click += new System.EventHandler(this.btnSaveDigitalSignature_Click);
+            // 
             // HashUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnSaveDigitalSignature);
             this.Controls.Add(this.btnSaveHashData);
             this.Controls.Add(this.metroSetLabel2);
             this.Controls.Add(this.tbxHash);
@@ -223,8 +261,9 @@
             this.Controls.Add(this.tbxPlainText);
             this.Controls.Add(this.metroSetLabel1);
             this.Controls.Add(this.metroSetLabel3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HashUserControl";
-            this.Size = new System.Drawing.Size(728, 495);
+            this.Size = new System.Drawing.Size(910, 619);
             this.ResumeLayout(false);
 
         }
@@ -239,5 +278,6 @@
         private MetroSet_UI.Controls.MetroSetTextBox tbxHash;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
         private MetroSet_UI.Controls.MetroSetButton btnSaveHashData;
+        private MetroSet_UI.Controls.MetroSetButton btnSaveDigitalSignature;
     }
 }

@@ -98,7 +98,7 @@ namespace CryptographyDigitalSignature
 
         public RSAParameters GetPrivateKey()
         {
-            return pri
+            return privateKey;
         }
 
         public string GetPublicAndPrivateKey()

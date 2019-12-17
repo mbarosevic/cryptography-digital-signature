@@ -22,7 +22,7 @@ namespace CryptographyDigitalSignature
 
             decryptUserControl1.Hide();
             hashUserControl1.Hide();
-            
+            checkDigitalSignatureUserControl1.Hide();
             encryptUserControl1.Show();
         }
 
@@ -33,6 +33,7 @@ namespace CryptographyDigitalSignature
 
             decryptUserControl1.Hide();
             hashUserControl1.Hide();
+            checkDigitalSignatureUserControl1.Hide();
             encryptUserControl1.Show();
         }
 
@@ -43,6 +44,7 @@ namespace CryptographyDigitalSignature
 
             encryptUserControl1.Hide();
             hashUserControl1.Hide();
+            checkDigitalSignatureUserControl1.Hide();
             decryptUserControl1.Show();
         }
 
@@ -53,6 +55,7 @@ namespace CryptographyDigitalSignature
 
             encryptUserControl1.Hide();
             decryptUserControl1.Hide();
+            checkDigitalSignatureUserControl1.Hide();
             hashUserControl1.Show();
         }
 
@@ -60,6 +63,11 @@ namespace CryptographyDigitalSignature
         {
             HidePanels();
             pnlDigitalSignature.Show();
+
+            encryptUserControl1.Hide();
+            decryptUserControl1.Hide();
+            hashUserControl1.Hide();
+            checkDigitalSignatureUserControl1.Show();
         }
 
         private void HidePanels()

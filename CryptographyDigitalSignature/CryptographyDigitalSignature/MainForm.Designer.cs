@@ -40,6 +40,7 @@
             this.encryptUserControl1 = new CryptographyDigitalSignature.EncryptUserControl();
             this.hashUserControl1 = new CryptographyDigitalSignature.HashUserControl();
             this.controlBox = new MetroSet_UI.Controls.MetroSetControlBox();
+            this.checkDigitalSignatureUserControl1 = new CryptographyDigitalSignature.CheckDigitalSignatureUserControl();
             this.SuspendLayout();
             // 
             // pnlEncrypt
@@ -205,9 +206,9 @@
             // decryptUserControl1
             // 
             this.decryptUserControl1.BackColor = System.Drawing.Color.White;
-            this.decryptUserControl1.Location = new System.Drawing.Point(32, 113);
+            this.decryptUserControl1.Location = new System.Drawing.Point(32, 120);
             this.decryptUserControl1.Name = "decryptUserControl1";
-            this.decryptUserControl1.Size = new System.Drawing.Size(728, 495);
+            this.decryptUserControl1.Size = new System.Drawing.Size(728, 488);
             this.decryptUserControl1.TabIndex = 27;
             // 
             // encryptUserControl1
@@ -221,9 +222,9 @@
             // hashUserControl1
             // 
             this.hashUserControl1.BackColor = System.Drawing.Color.White;
-            this.hashUserControl1.Location = new System.Drawing.Point(39, 113);
+            this.hashUserControl1.Location = new System.Drawing.Point(32, 120);
             this.hashUserControl1.Name = "hashUserControl1";
-            this.hashUserControl1.Size = new System.Drawing.Size(728, 495);
+            this.hashUserControl1.Size = new System.Drawing.Size(728, 488);
             this.hashUserControl1.TabIndex = 28;
             // 
             // controlBox
@@ -251,6 +252,14 @@
             this.controlBox.ThemeAuthor = "Narwin";
             this.controlBox.ThemeName = "MetroLite";
             // 
+            // checkDigitalSignatureUserControl1
+            // 
+            this.checkDigitalSignatureUserControl1.BackColor = System.Drawing.Color.White;
+            this.checkDigitalSignatureUserControl1.Location = new System.Drawing.Point(32, 120);
+            this.checkDigitalSignatureUserControl1.Name = "checkDigitalSignatureUserControl1";
+            this.checkDigitalSignatureUserControl1.Size = new System.Drawing.Size(728, 488);
+            this.checkDigitalSignatureUserControl1.TabIndex = 30;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -266,9 +275,10 @@
             this.Controls.Add(this.btnCalculateHashUserControl);
             this.Controls.Add(this.btnDecryptUserControl);
             this.Controls.Add(this.btnEncryptUserControl);
-            this.Controls.Add(this.hashUserControl1);
             this.Controls.Add(this.decryptUserControl1);
             this.Controls.Add(this.encryptUserControl1);
+            this.Controls.Add(this.checkDigitalSignatureUserControl1);
+            this.Controls.Add(this.hashUserControl1);
             this.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(71)))), ((int)(((byte)(73)))));
             this.Name = "MainForm";
             this.SmallLineColor1 = System.Drawing.Color.Maroon;
@@ -295,6 +305,7 @@
         private DecryptUserControl decryptUserControl1;
         private HashUserControl hashUserControl1;
         private MetroSet_UI.Controls.MetroSetControlBox controlBox;
+        private CheckDigitalSignatureUserControl checkDigitalSignatureUserControl1;
     }
 }
 

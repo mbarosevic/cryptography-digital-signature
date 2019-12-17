@@ -49,11 +49,24 @@ namespace CryptographyDigitalSignature
             }
             return builder.ToString();
         }
-        /*
-        public string GenerateDigitalSignature(string hashText)
+        
+        public string GenerateDigitalSignature(string hashedText)
         {
-            string digitalSignature = rsaAlg.Encrypt(hashText);
+            string digitalSignature = rsaAlg.Encrypt(hashedText);
+            privateKeySignature = rsaAlg.GetPrivateKey();
+            return digitalSignature;
         }
-        */
+
+        public string DecryptDigitalSignature(string digitalSignature)
+        {
+            if(rsaAlg.Decrypt(digitalSignature) != null)
+            {
+                return rsaAlg.Decrypt(digitalSignature);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

@@ -34,6 +34,7 @@
             this.tbxPlainTekst = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetLabel3 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.lblCheckStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCheck
@@ -60,6 +61,7 @@
             this.btnCheck.Text = "Check";
             this.btnCheck.ThemeAuthor = "Narwin";
             this.btnCheck.ThemeName = "MetroLite";
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // btnChooseFile
             // 
@@ -85,6 +87,7 @@
             this.btnChooseFile.Text = "Choose File";
             this.btnChooseFile.ThemeAuthor = "Narwin";
             this.btnChooseFile.ThemeName = "MetroLite";
+            this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
             // 
             // btnChooseDigitalSignature
             // 
@@ -110,6 +113,7 @@
             this.btnChooseDigitalSignature.Text = "Choose Digital Signature";
             this.btnChooseDigitalSignature.ThemeAuthor = "Narwin";
             this.btnChooseDigitalSignature.ThemeName = "MetroLite";
+            this.btnChooseDigitalSignature.Click += new System.EventHandler(this.btnChooseDigitalSignature_Click);
             // 
             // tbxPlainTekst
             // 
@@ -165,11 +169,20 @@
             this.metroSetLabel1.ThemeAuthor = "Narwin";
             this.metroSetLabel1.ThemeName = "MetroLite";
             // 
+            // lblCheckStatus
+            // 
+            this.lblCheckStatus.AutoSize = true;
+            this.lblCheckStatus.Location = new System.Drawing.Point(109, 436);
+            this.lblCheckStatus.Name = "lblCheckStatus";
+            this.lblCheckStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblCheckStatus.TabIndex = 25;
+            // 
             // CheckDigitalSignatureUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblCheckStatus);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnChooseFile);
             this.Controls.Add(this.btnChooseDigitalSignature);
@@ -179,6 +192,7 @@
             this.Name = "CheckDigitalSignatureUserControl";
             this.Size = new System.Drawing.Size(728, 495);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -190,5 +204,6 @@
         private MetroSet_UI.Controls.MetroSetTextBox tbxPlainTekst;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel3;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
+        private System.Windows.Forms.Label lblCheckStatus;
     }
 }

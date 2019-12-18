@@ -31,10 +31,13 @@ namespace CryptographyDigitalSignature
         public string HashCalculate(string plainText)
         {
             StringBuilder builder = new StringBuilder();
+            //Creates a SHA256 local variable
             using (SHA256 sha256 = SHA256.Create())
             {
+                //Compute Hash returns byte array saved in bytes byte array
                 byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(plainText));
 
+                //Converting bytes byte array to a string builder
                 for (int i = 0; i < bytes.Length; i++)
                 {
                     builder.Append(bytes[i].ToString("x2"));

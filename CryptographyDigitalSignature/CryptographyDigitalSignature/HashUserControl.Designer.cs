@@ -121,7 +121,7 @@
             this.btnOpenFileDialog.Text = "Choose File";
             this.btnOpenFileDialog.ThemeAuthor = "Narwin";
             this.btnOpenFileDialog.ThemeName = "MetroLite";
-            this.btnOpenFileDialog.Click += new System.EventHandler(this.btnOpenFileDialog_Click);
+            this.btnOpenFileDialog.Click += new System.EventHandler(this.ChooseFileButtonClick);
             // 
             // btnCalculateHash
             // 
@@ -245,7 +245,7 @@
             this.btnSaveDigitalSignature.Text = "Save Digital Signature";
             this.btnSaveDigitalSignature.ThemeAuthor = "Narwin";
             this.btnSaveDigitalSignature.ThemeName = "MetroLite";
-            this.btnSaveDigitalSignature.Click += new System.EventHandler(this.btnSaveDigitalSignature_Click);
+            this.btnSaveDigitalSignature.Click += new System.EventHandler(this.SaveDigitalSignatureButtonClick);
             // 
             // HashUserControl
             // 

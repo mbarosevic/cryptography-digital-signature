@@ -18,8 +18,11 @@ namespace CryptographyDigitalSignature
         }
 
         readonly ShaAlgorithm sha = new ShaAlgorithm();
-        public MainForm mainForm;
-
+        /// <summary>
+        /// Hash button click method that checks if the user entered some text to calculate hash
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CalculateHashButtonClick(object sender, EventArgs e)
         {
             string plainText = tbxPlainText.Text;
@@ -33,23 +36,26 @@ namespace CryptographyDigitalSignature
             }
         }
 
-        private void btnOpenFileDialog_Click(object sender, EventArgs e)
+        private void ChooseFileButtonClick(object sender, EventArgs e)
         {
-            mainForm = new MainForm();
+            MainForm mainForm = new MainForm();
             tbxPlainText.Text = mainForm.OpenFileDialog();
+            mainForm.Dispose();
         }
 
         private void SaveHashDataButtonClick(object sender, EventArgs e)
         {
-            mainForm = new MainForm();
+            MainForm mainForm = new MainForm();
             mainForm.SaveFileDialog(tbxHash.Text);
+            mainForm.Dispose();
         }
 
-        private void btnSaveDigitalSignature_Click(object sender, EventArgs e)
+        private void SaveDigitalSignatureButtonClick(object sender, EventArgs e)
         {
             string digitalSignature = sha.GenerateDigitalSignature(tbxHash.Text);
-            mainForm = new MainForm();
+            MainForm mainForm = new MainForm();
             mainForm.SaveFileDialog(digitalSignature);
+            mainForm.Dispose();
         }
     }
 }

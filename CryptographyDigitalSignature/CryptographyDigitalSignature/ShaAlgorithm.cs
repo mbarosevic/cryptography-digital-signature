@@ -11,13 +11,8 @@ namespace CryptographyDigitalSignature
         //Implementation of thread-safety singleton pattern
         private static ShaAlgorithm instance = null;
         private static readonly object padlock = new object();
-
-        public ShaAlgorithm()
-        {
-
-        }
-
-        public static ShaAlgorithm Instance
+        public ShaAlgorithm() { }
+        public new static ShaAlgorithm Instance
         {
             get
             {
@@ -32,9 +27,7 @@ namespace CryptographyDigitalSignature
             }
         }
 
-        RsaAlgorithm rsaAlg = new RsaAlgorithm();
-        private static RSAParameters publicKeySignature;
-        private static RSAParameters privateKeySignature;
+        readonly RsaAlgorithm rsaAlg = new RsaAlgorithm();
         public string HashCalculate(string plainText)
         {
             StringBuilder builder = new StringBuilder();
@@ -53,7 +46,7 @@ namespace CryptographyDigitalSignature
         public string GenerateDigitalSignature(string hashedText)
         {
             string digitalSignature = rsaAlg.Encrypt(hashedText);
-            privateKeySignature = rsaAlg.GetPrivateKey();
+            _ = rsaAlg.GetPrivateKey();
             return digitalSignature;
         }
 

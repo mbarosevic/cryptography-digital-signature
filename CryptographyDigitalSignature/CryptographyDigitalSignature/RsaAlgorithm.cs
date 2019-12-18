@@ -13,10 +13,7 @@ namespace CryptographyDigitalSignature
         private static RsaAlgorithm instance = null;
         private static readonly object padlock = new object();
 
-        public RsaAlgorithm()
-        {
-
-        }
+        public RsaAlgorithm() { }
 
         public static RsaAlgorithm Instance
         {
@@ -32,12 +29,17 @@ namespace CryptographyDigitalSignature
                 }
             }
         }
-
         public static RSAParameters publicKey;
         private static RSAParameters privateKey;
 
+        //used for storing public and private key in xml format
         public string publicAndPrivateKey;
-        public void GenerirajKljuceve()
+
+        /// <summary>
+        /// Method that Generates public and private key using RSACryptoServiceProvider - 2048 bit
+        /// Public and private key are exported in xml format in publicAndPrivateKey variable
+        /// </summary>
+        public void GenerateKeys()
         {
             using (var rsa = new RSACryptoServiceProvider(2048))
             {
@@ -62,10 +64,16 @@ namespace CryptographyDigitalSignature
             }
             return encryptedText;
         }
-
+        /// <summary>
+        /// Main Encryption method that encrypts plain text with additional Encrypt to byte array method above.
+        /// </summary>
+        /// <param name="plainText"></param>
+        /// <returns>
+        /// Converted Base64 Encrypted Text from EncryptToByteArray method.
+        /// </returns>
         public string Encrypt(string plainText)
         {
-            GenerirajKljuceve();
+            GenerateKeys();
             string encryptedText = Convert.ToBase64String(EncryptToByteArray(plainText));
             return encryptedText;
         }
@@ -90,7 +98,13 @@ namespace CryptographyDigitalSignature
             }
 
         }
-
+        /// <summary>
+        /// Main Decryption method that decrypts encrypted text using decrypt to byte array method.
+        /// </summary>
+        /// <param name="encryptedText"></param>
+        /// <returns>
+        /// Decrypted string text
+        /// </returns>
         public string Decrypt(string encryptedText)
         {
             return DecryptToByteArray(Convert.FromBase64String(encryptedText));

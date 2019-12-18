@@ -9,10 +9,7 @@ namespace CryptographyDigitalSignature
         private static AesAlgorithm instance = null;
         private static readonly object padlock = new object();
 
-        public AesAlgorithm()
-        {
-
-        }
+        public AesAlgorithm() { }
 
         public static AesAlgorithm Instance
         {
@@ -28,7 +25,16 @@ namespace CryptographyDigitalSignature
                 }
             }
         }
-
+        /// <summary>
+        /// Main method that returns encrypted byte array.
+        /// Byte array is being converted in EncryptUserControl.
+        /// </summary>
+        /// <param name="plainText"></param>
+        /// <param name="Key"></param>
+        /// <param name="IV"></param>
+        /// <returns>
+        /// Encrypted text in byte array.
+        /// </returns>
         public byte[] EncryptToByteArray(string plainText, byte[] Key, byte[] IV)
         {
             byte[] encrypted;
@@ -54,7 +60,15 @@ namespace CryptographyDigitalSignature
             }
             return encrypted;
         }
-
+        /// <summary>
+        /// Main Decryption method that returns encrypted text. Method is being used from DecryptUserControl.
+        /// </summary>
+        /// <param name="encryptedText"></param>
+        /// <param name="Key"></param>
+        /// <param name="IV"></param>
+        /// <returns>
+        /// Decrypted text
+        /// </returns>
         public string DecryptFromByteArray(byte[] encryptedText, byte[] Key, byte[] IV)
         {
             string plainText = null;

@@ -46,7 +46,6 @@ namespace CryptographyDigitalSignature
         private string iv = string.Empty;
 
         public static RSAParameters javniKljuc;
-        private static RSAParameters privatniKljuc;
         public void EncryptAes(string plainText)
         {
             try
